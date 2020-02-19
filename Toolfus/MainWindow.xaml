@@ -6,18 +6,18 @@
         xmlns:local="clr-namespace:Toolfus"
         xmlns:system="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="350" Width="400">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="80"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <TextBlock Text="Dofus account" Margin="10,20,10,20"
                    FontFamily="Verdana" FontSize="18" FontWeight="Bold"
                    Foreground="#28C900" Grid.Row="0"/>
         <ScrollViewer HorizontalScrollBarVisibility="Auto" Grid.Row="1">
-            <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Height="50">
+            <Grid HorizontalAlignment="Left" VerticalAlignment="Top">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
@@ -27,25 +27,14 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
-                <CheckBox x:Name="cb1" Grid.Row="1" Grid.Column="0" Margin="5,0,0,0" 
-                          Content="Awned lvl 5050"  IsThreeState="True"/>
-                <TextBlock x:Name="text1" Grid.Row="1" Grid.Column="0" Margin="5,0,0,0" />
-                <CheckBox x:Name="cb2" Grid.Row="2" Grid.Column="0" Margin="5,0,0,0"
-                          Content="Awned lvl 5050" IsThreeState="True"/>
-                <TextBlock x:Name="text2" Grid.Row="2" Grid.Column="0" Margin="5,0,0,0" />
-                <CheckBox x:Name="cb3" Grid.Row="3" Grid.Column="0" Margin="5,0,0,0"
-                          Content="Awned lvl 5050" IsThreeState="True"/>
-                <TextBlock x:Name="text3" Grid.Row="3" Grid.Column="0" Margin="5,0,0,0" />
-                <CheckBox x:Name="cb4" Grid.Row="4" Grid.Column="0" Margin="5,0,0,0"
-                          Content="Awned lvl 5050" IsThreeState="True"/>
-                <TextBlock x:Name="text4" Grid.Row="4" Grid.Column="0" Margin="5,0,0,0" />
-                <CheckBox x:Name="cb5" Grid.Row="5" Grid.Column="0" Margin="5,0,0,0"
-                          Content="Awned lvl 5050" IsThreeState="True"/>
-                <TextBlock x:Name="text5" Grid.Row="5" Grid.Column="0" Margin="5,0,0,0" />
-                <CheckBox x:Name="cb6" Grid.Row="6" Grid.Column="0" Margin="5,0,0,0"
-                          Content="Awned lvl 5050" IsThreeState="True"/>
-                <TextBlock x:Name="text6" Grid.Row="6" Grid.Column="0" Margin="5,0,0,0" />
+                <CheckBox x:Name="Cb1" Grid.Row="1" Margin="5,0,0,0" Content="Awned lvl 1"  />
+                <CheckBox x:Name="Cb2" Grid.Row="2" Margin="5,0,0,0" Content="Awned lvl 2" />
+                <CheckBox x:Name="Cb3" Grid.Row="3" Margin="5,0,0,0" Content="Awned lvl 3" />
+                <CheckBox x:Name="Cb4" Grid.Row="4" Margin="5,0,0,0" Content="Awned lvl 4" />
+                <CheckBox x:Name="Cb5" Grid.Row="5" Margin="5,0,0,0" Content="Awned lvl 5" />
+                <CheckBox x:Name="Cb6" Grid.Row="6" Margin="5,0,0,0" Content="Awned lvl 6"/>
             </Grid>
         </ScrollViewer>
     </Grid>
+    
 </Window>
