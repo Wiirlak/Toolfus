@@ -1,4 +1,5 @@
-# dofusTool
+# Toolfus
+Un outil révolutionnaire
 ## Feature : 
  - Bouger toute la team en un clic
  - Deplacer la team avec le clavier (fleches directionnelles)
