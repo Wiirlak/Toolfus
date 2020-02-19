@@ -50,13 +50,25 @@
             <Generator>MSBuild:Compile</Generator>
             <SubType>Designer</SubType>
         </ApplicationDefinition>
+        <Page Include="AccountWindow.xaml" />
+        <Page Include="ChatPage.xaml" />
+        <Page Include="KeymapPage.xaml" />
         <Page Include="MainWindow.xaml">
             <Generator>MSBuild:Compile</Generator>
             <SubType>Designer</SubType>
         </Page>
+        <Compile Include="AccountWindow.xaml.cs">
+          <DependentUpon>AccountWindow.xaml</DependentUpon>
+        </Compile>
         <Compile Include="App.xaml.cs">
             <DependentUpon>App.xaml</DependentUpon>
             <SubType>Code</SubType>
+        </Compile>
+        <Compile Include="ChatPage.xaml.cs">
+          <DependentUpon>ChatPage.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="KeymapPage.xaml.cs">
+          <DependentUpon>KeymapPage.xaml</DependentUpon>
         </Compile>
         <Compile Include="MainWindow.xaml.cs">
             <DependentUpon>MainWindow.xaml</DependentUpon>

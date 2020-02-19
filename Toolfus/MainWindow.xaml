@@ -6,35 +6,21 @@
         xmlns:local="clr-namespace:Toolfus"
         xmlns:system="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="400">
+        Title="Toolfus - v0.0.1" Height="600" Width="400">
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="80"/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
-        <TextBlock Text="Dofus account" Margin="10,20,10,20"
-                   FontFamily="Verdana" FontSize="18" FontWeight="Bold"
-                   Foreground="#28C900" Grid.Row="0"/>
-        <ScrollViewer HorizontalScrollBarVisibility="Auto" Grid.Row="1">
-            <Grid HorizontalAlignment="Left" VerticalAlignment="Top">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>
-                <CheckBox x:Name="Cb1" Grid.Row="1" Margin="5,0,0,0" Content="Awned lvl 1"  />
-                <CheckBox x:Name="Cb2" Grid.Row="2" Margin="5,0,0,0" Content="Awned lvl 2" />
-                <CheckBox x:Name="Cb3" Grid.Row="3" Margin="5,0,0,0" Content="Awned lvl 3" />
-                <CheckBox x:Name="Cb4" Grid.Row="4" Margin="5,0,0,0" Content="Awned lvl 4" />
-                <CheckBox x:Name="Cb5" Grid.Row="5" Margin="5,0,0,0" Content="Awned lvl 5" />
-                <CheckBox x:Name="Cb6" Grid.Row="6" Margin="5,0,0,0" Content="Awned lvl 6"/>
-            </Grid>
-        </ScrollViewer>
+        <StackPanel>
+            <TextBlock Margin="10,20,10,20" FontFamily="Verdana" FontSize="18" FontWeight="Bold" Foreground="#28C900">
+                Toolfus, l'incompris
+            </TextBlock>
+            <StackPanel Orientation="Horizontal" Height="40">
+                <Button Click="ButtonAccount_OnClick" Margin="10,0,0,0" MinWidth="75">Account list</Button>
+                <Button Click="ButtonConnect_OnClick" Margin="10,0,0,0" MinWidth="75">Tout connecter</Button>
+                <Button Click="ButtonKeymap_OnClick" Margin="10,0,0,0" MinWidth="75">Keymap</Button>
+                <Button Click="ButtonChat_OnClick" Margin="10,0,0,0" MinWidth="75">Chat</Button>
+            </StackPanel>
+        </StackPanel>
+        <Frame x:Name="Main" Margin="0,150,0,0" NavigationUIVisibility="Hidden"/>
+
     </Grid>
-    
+
 </Window>
