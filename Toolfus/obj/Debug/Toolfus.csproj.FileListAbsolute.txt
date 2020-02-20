@@ -32,3 +32,10 @@ D:\ESGI\dotNet\Toolfus\Toolfus\obj\Debug\KeymapPage.g.cs
 D:\ESGI\dotNet\Toolfus\Toolfus\obj\Debug\KeymapPage.baml
 D:\ESGI\dotNet\Toolfus\Toolfus\obj\Debug\ChatPage.g.cs
 D:\ESGI\dotNet\Toolfus\Toolfus\obj\Debug\ChatPage.baml
+D:\ESGI\dotNet\Toolfus\Toolfus\bin\Debug\MaterialDesignColors.dll
+D:\ESGI\dotNet\Toolfus\Toolfus\bin\Debug\MaterialDesignThemes.Wpf.dll
+D:\ESGI\dotNet\Toolfus\Toolfus\bin\Debug\MaterialDesignColors.pdb
+D:\ESGI\dotNet\Toolfus\Toolfus\bin\Debug\MaterialDesignThemes.Wpf.pdb
+D:\ESGI\dotNet\Toolfus\Toolfus\bin\Debug\MaterialDesignThemes.Wpf.xml
+D:\ESGI\dotNet\Toolfus\Toolfus\obj\Debug\App.baml
+D:\ESGI\dotNet\Toolfus\Toolfus\obj\Debug\Toolfus.csproj.CopyComplete
