@@ -59,8 +59,7 @@
             <SubType>Designer</SubType>
         </ApplicationDefinition>
         <Page Include="AccountWindow.xaml" />
-        <Page Include="ChatPage.xaml" />
-        <Page Include="KeymapPage.xaml" />
+        <Page Include="ChatWindow.xaml" />
         <Page Include="MainWindow.xaml">
             <Generator>MSBuild:Compile</Generator>
             <SubType>Designer</SubType>
@@ -72,18 +71,19 @@
             <DependentUpon>App.xaml</DependentUpon>
             <SubType>Code</SubType>
         </Compile>
-        <Compile Include="ChatPage.xaml.cs">
-          <DependentUpon>ChatPage.xaml</DependentUpon>
-        </Compile>
-        <Compile Include="KeymapPage.xaml.cs">
-          <DependentUpon>KeymapPage.xaml</DependentUpon>
+        <Compile Include="ChatWindow.xaml.cs">
+          <DependentUpon>ChatWindow.xaml</DependentUpon>
         </Compile>
         <Compile Include="MainWindow.xaml.cs">
             <DependentUpon>MainWindow.xaml</DependentUpon>
             <SubType>Code</SubType>
         </Compile>
+        <Page Include="OptionsWindow.xaml" />
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="OptionsWindow.xaml.cs">
+          <DependentUpon>OptionsWindow.xaml</DependentUpon>
+        </Compile>
         <Compile Include="Properties\AssemblyInfo.cs">
             <SubType>Code</SubType>
         </Compile>

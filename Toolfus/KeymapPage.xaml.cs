@@ -2,9 +2,9 @@
 
 namespace WpfApplication1
 {
-    public partial class KeymapPage : Page
+    public partial class ChatPage : Page
     {
-        public KeymapPage()
+        public ChatPage()
         {
             InitializeComponent();
         }

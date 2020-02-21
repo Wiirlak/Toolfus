@@ -39,3 +39,16 @@ D:\ESGI\dotNet\Toolfus\Toolfus\bin\Debug\MaterialDesignThemes.Wpf.pdb
 D:\ESGI\dotNet\Toolfus\Toolfus\bin\Debug\MaterialDesignThemes.Wpf.xml
 D:\ESGI\dotNet\Toolfus\Toolfus\obj\Debug\App.baml
 D:\ESGI\dotNet\Toolfus\Toolfus\obj\Debug\Toolfus.csproj.CopyComplete
+E:\Autre\Perso\Toolfus\Toolfus\bin\Debug\MaterialDesignColors.dll
+E:\Autre\Perso\Toolfus\Toolfus\bin\Debug\MaterialDesignThemes.Wpf.dll
+E:\Autre\Perso\Toolfus\Toolfus\bin\Debug\MaterialDesignColors.pdb
+E:\Autre\Perso\Toolfus\Toolfus\bin\Debug\MaterialDesignThemes.Wpf.pdb
+E:\Autre\Perso\Toolfus\Toolfus\bin\Debug\MaterialDesignThemes.Wpf.xml
+E:\Autre\Perso\Toolfus\Toolfus\obj\Debug\AccountWindow.g.cs
+E:\Autre\Perso\Toolfus\Toolfus\obj\Debug\App.baml
+E:\Autre\Perso\Toolfus\Toolfus\obj\Debug\AccountWindow.baml
+E:\Autre\Perso\Toolfus\Toolfus\obj\Debug\Toolfus.csproj.CopyComplete
+E:\Autre\Perso\Toolfus\Toolfus\obj\Debug\ChatWindow.g.cs
+E:\Autre\Perso\Toolfus\Toolfus\obj\Debug\OptionsWindow.g.cs
+E:\Autre\Perso\Toolfus\Toolfus\obj\Debug\ChatWindow.baml
+E:\Autre\Perso\Toolfus\Toolfus\obj\Debug\OptionsWindow.baml

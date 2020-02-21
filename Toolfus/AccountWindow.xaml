@@ -5,34 +5,71 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:WpfApplication1"
         mc:Ignorable="d"
-        Title="AccountWindow" Height="450" Width="800">
+        Title="AccountWindow" Height="450" Width="300">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="80"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition />
         </Grid.RowDefinitions>
-        <TextBlock Text="Dofus account" Margin="10,20,10,20"
-                   FontFamily="Verdana" FontSize="18" FontWeight="Bold"
-                   Foreground="#28C900" Grid.Row="0"/>
-        <ScrollViewer HorizontalScrollBarVisibility="Auto" Grid.Row="1">
-            <Grid HorizontalAlignment="Left" VerticalAlignment="Top">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>
-                <CheckBox x:Name="Cb1" Grid.Row="1" Margin="5,0,0,0" Content="Awned lvl 1"  />
-                <CheckBox x:Name="Cb2" Grid.Row="2" Margin="5,0,0,0" Content="Awned lvl 2" />
-                <CheckBox x:Name="Cb3" Grid.Row="3" Margin="5,0,0,0" Content="Awned lvl 3" />
-                <CheckBox x:Name="Cb4" Grid.Row="4" Margin="5,0,0,0" Content="Awned lvl 4" />
-                <CheckBox x:Name="Cb5" Grid.Row="5" Margin="5,0,0,0" Content="Awned lvl 5" />
-                <CheckBox x:Name="Cb6" Grid.Row="6" Margin="5,0,0,0" Content="Awned lvl 6"/>
-            </Grid>
-        </ScrollViewer>
+        <StackPanel Grid.Row="0">
+            <TextBlock TextAlignment="Center" Margin="0,10,0,0" FontFamily="Verdana" FontSize="18" FontWeight="Bold" Foreground="#28C900">
+                Chat
+            </TextBlock>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Width="Auto" Grid.Row="1">
+            <ScrollViewer HorizontalScrollBarVisibility="Auto">
+                <Grid HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <Grid.Resources >
+                        <Style TargetType="Border" >
+                            <Setter Property="Padding" Value="5,5,5,5" />
+                        </Style>
+                    </Grid.Resources>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Border Grid.Row="1" Grid.Column="0">
+                        <CheckBox x:Name="Cb1"  Margin="5,0,0,0" Content="Awned lvl 1"  />
+                    </Border>
+                    <Border Grid.Row="2" Grid.Column="0">
+                        <CheckBox x:Name="Cb2"  Margin="5,0,0,0" Content="Awned lvl 2" />
+                    </Border>
+                    <Border Grid.Row="3" Grid.Column="0">
+                        <CheckBox x:Name="Cb3"  Margin="5,0,0,0" Content="Awned lvl 3" />
+                    </Border>
+                    <Border Grid.Row="4" Grid.Column="0">
+                        <CheckBox x:Name="Cb4" Margin="5,0,0,0" Content="Awned lvl 4" />
+                    </Border>
+                    <Border  Grid.Row="5" Grid.Column="0">
+                        <CheckBox x:Name="Cb5" Margin="5,0,0,0" Content="Awned lvl 5" />
+                    </Border>
+                    <Border  Grid.Row="6" Grid.Column="0">
+                        <CheckBox x:Name="Cb6" Margin="5,0,0,0" Content="Awned lvl 6"/>
+                    </Border>
+                    <Border  Grid.Row="7" Grid.Column="0">
+                        <CheckBox x:Name="Cb7" Margin="5,0,0,0" Content="Awned lvl 7"/>
+                    </Border>
+                    <Border  Grid.Row="8" Grid.Column="0">
+                        <CheckBox x:Name="Cb8" Margin="5,0,0,0" Content="Awned lvl 8"/>
+                    </Border>
+                </Grid>
+            </ScrollViewer>
+            <StackPanel Orientation="Vertical">
+                <StackPanel.Resources>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Margin" Value="0,10,0,0"/>
+                    </Style>
+                </StackPanel.Resources>
+                <Button>Ajouter</Button>
+                <Button>Tout connecter</Button>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Window>

@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\ESGI\dotNet\Toolfus\Toolfus\obj\Debug\
+E:\Autre\Perso\Toolfus\Toolfus\obj\Debug\
 WpfApplication1
 none
 false
 DEBUG;TRACE
-D:\ESGI\dotNet\Toolfus\Toolfus\App.xaml
-41904815689
+E:\Autre\Perso\Toolfus\Toolfus\App.xaml
+41481629120
 
-7-1073828368
-11663470933
-AccountWindow.xaml;ChatPage.xaml;KeymapPage.xaml;MainWindow.xaml;
+72038027853
+11-606471915
+AccountWindow.xaml;ChatWindow.xaml;MainWindow.xaml;OptionsWindow.xaml;
 
 False
 

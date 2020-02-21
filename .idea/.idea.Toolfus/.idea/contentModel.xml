@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\ViZua\.Rider2019.3\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\ViZua\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_Toolfus.-2041853132.00" t="ExcludeRecursive" />
-    <e p="D:\ESGI\dotNet\Toolfus" t="IncludeFlat">
-      <e p=".git\info\exclude" t="IncludeRecursive" />
+    <e p="C:\Users\Bastien\.Rider2019.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Bastien\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_Toolfus.-70558621.00" t="ExcludeRecursive" />
+    <e p="E:\Autre\Perso\Toolfus" t="IncludeFlat">
       <e p="packages" t="ExcludeRecursive" />
       <e p="Toolfus" t="IncludeRecursive">
         <e p="AccountWindow.xaml" t="Include" />
@@ -13,10 +12,8 @@
         <e p="App.xaml" t="Include" />
         <e p="App.xaml.cs" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
-        <e p="ChatPage.xaml" t="Include" />
-        <e p="ChatPage.xaml.cs" t="Include" />
-        <e p="KeymapPage.xaml" t="Include" />
-        <e p="KeymapPage.xaml.cs" t="Include" />
+        <e p="ChatWindow.xaml" t="Include" />
+        <e p="ChatWindow.xaml.cs" t="Include" />
         <e p="MainWindow.xaml" t="Include" />
         <e p="MainWindow.xaml.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive">
@@ -28,6 +25,8 @@
             <e p="MainWindow.g.cs" t="Include" />
           </e>
         </e>
+        <e p="OptionsWindow.xaml" t="Include" />
+        <e p="OptionsWindow.xaml.cs" t="Include" />
         <e p="packages.config" t="Include" />
         <e p="Properties" t="Include">
           <e p="AssemblyInfo.cs" t="Include" />

@@ -1,0 +1,41 @@
+﻿<Window x:Class="WpfApplication1.OptionsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:WpfApplication1"
+        mc:Ignorable="d"
+        Title="OptionsWindow" Height="200" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0">
+            <TextBlock TextAlignment="Center" Margin="0,10,0,0" FontFamily="Verdana" FontSize="18" FontWeight="Bold" Foreground="#28C900">
+                Options
+            </TextBlock>
+        </StackPanel>
+        <TextBlock Grid.Row="1">
+            Deplacer a gauche
+        </TextBlock>
+        <TextBlock Grid.Row="2">
+            Deplacer a droite
+        </TextBlock>
+        <TextBlock Grid.Row="3">
+            Deplacer en haut
+        </TextBlock>
+        <TextBlock Grid.Row="4">
+            Deplacer en bas
+        </TextBlock>
+        <TextBlock Grid.Row="5">
+            Activer / Desactiver
+        </TextBlock>
+        
+        
+    </Grid>
+</Window>

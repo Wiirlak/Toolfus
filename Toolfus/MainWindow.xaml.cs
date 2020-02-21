@@ -19,19 +19,16 @@ namespace Toolfus
             acc.Show();
         }
 
-        private void ButtonConnect_OnClick(object sender, RoutedEventArgs e)
+        private void ButtonOptions_OnClick(object sender, RoutedEventArgs e)
         {
-            throw new System.NotImplementedException();
-        }
-
-        private void ButtonKeymap_OnClick(object sender, RoutedEventArgs e)
-        {
-            Main.Content = new  KeymapPage();
+            OptionsWindow acc = new OptionsWindow();
+            acc.Show();
         }
 
         private void ButtonChat_OnClick(object sender, RoutedEventArgs e)
         {
-            Main.Content = new  ChatPage();
+            ChatWindow acc = new ChatWindow();
+            acc.Show();
         }
     }
 }

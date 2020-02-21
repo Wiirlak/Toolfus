@@ -1,0 +1,94 @@
+﻿<Window x:Class="WpfApplication1.ChatWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:WpfApplication1"
+        mc:Ignorable="d"
+        Title="ChatWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="300"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0">
+            <TextBlock TextAlignment="Center" Margin="0,10,0,0" FontFamily="Verdana" FontSize="18" FontWeight="Bold" Foreground="#28C900">
+                Chat
+            </TextBlock>
+        </StackPanel>
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" Grid.Row="1">
+            <Grid HorizontalAlignment="Left" VerticalAlignment="Top">
+                <Grid.Resources >
+                    <Style TargetType="Border" >
+                        <Setter Property="Padding" Value="5,2,2,2" />
+                    </Style>
+                </Grid.Resources>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Border Grid.Row="1" Grid.Column="0">
+                    <Label Foreground="Chartreuse">(Nekle) - /r Vend coiffe prespic</Label>
+                </Border>
+                <Border Grid.Row="2" Grid.Column="0">
+                    <Label Foreground="Chartreuse">(Nekle) - /r Vend coiffe prespic</Label>
+                </Border>
+                <Border Grid.Row="3" Grid.Column="0">
+                    <Label Foreground="Chartreuse">(Trove) - /r Vend coiffe prespic</Label>
+                </Border>
+                <Border Grid.Row="4" Grid.Column="0">
+                    <Label>(All) - /r Vend coiffe prespic</Label>
+                </Border>
+                <Border Grid.Row="5" Grid.Column="0">
+                    <Label Foreground="Chartreuse">(Nekle) - /r Vend coiffe prespic</Label>
+                </Border>
+                <Border Grid.Row="6" Grid.Column="0">
+                    <Label>(Nekle) - /r Vend coiffe prespic</Label>
+                </Border>
+                <Border Grid.Row="7" Grid.Column="0">
+                    <Label>(Nekle) - /r Vend coiffe prespic</Label>
+                </Border>
+                <Border Grid.Row="8" Grid.Column="0">
+                    <Label>(Nekle) - /r Vend coiffe prespic</Label>
+                </Border>
+                <Border Grid.Row="9" Grid.Column="0">
+                    <Label>(Nekle) - /r Vend coiffe prespic</Label>
+                </Border>
+                <Border Grid.Row="10" Grid.Column="0">
+                    <Label>(Nekle) - /r Vend coiffe prespic</Label>
+                </Border>
+                <Border Grid.Row="11" Grid.Column="0">
+                    <Label Foreground="Chartreuse">(Nekle) - /r Vend coiffe prespic</Label>
+                </Border>
+                <Border Grid.Row="12" Grid.Column="0">
+                    <Label>(Nekle) - /r Vend coiffe prespic</Label>
+                </Border>
+                <Border Grid.Row="13" Grid.Column="0">
+                    <Label>(Roxane) - /r recrute pour piou</Label>
+                </Border>
+                <Border Grid.Row="14" Grid.Column="0">
+                    <Label Foreground="Chartreuse">(Nekle) - /r Vend coiffe prespic</Label>
+                </Border>
+                <Border Grid.Row="15" Grid.Column="0">
+                    <Label>(Nekle) - /r Vend coiffe prespic</Label>
+                </Border>
+                
+                
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</Window>
