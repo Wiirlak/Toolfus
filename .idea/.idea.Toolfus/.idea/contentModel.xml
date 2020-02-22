@@ -20,9 +20,9 @@
           <e p="Debug" t="Include">
             <e p="AccountWindow.g.cs" t="Include" />
             <e p="App.g.cs" t="Include" />
-            <e p="ChatPage.g.cs" t="Include" />
-            <e p="KeymapPage.g.cs" t="Include" />
+            <e p="ChatWindow.g.cs" t="Include" />
             <e p="MainWindow.g.cs" t="Include" />
+            <e p="OptionsWindow.g.cs" t="Include" />
           </e>
         </e>
         <e p="OptionsWindow.xaml" t="Include" />
