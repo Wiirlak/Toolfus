@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Windows;
-using WpfApplication1;
-using System.Diagnostics;
 using System.Windows.Controls;
 
 namespace Toolfus
@@ -27,11 +25,11 @@ namespace Toolfus
                     // dofus.Add("Process: "+process.ProcessName +" ID: "+process.Id+" Window title: "+process.MainWindowTitle+"");
                     Border border = new Border();
                     CheckBox checkBox =  new CheckBox();
-                    checkBox.Margin = new System.Windows.Thickness { Left = 5, Top = 0, Right = 0, Bottom = 0 };
+                    checkBox.Margin = new Thickness { Left = 5, Top = 0, Right = 0, Bottom = 0 };
                     checkBox.Content = process.MainWindowTitle;
                     border.Child = checkBox;
                     dofus.Add(process);
-                    this.dofusProcess.Children.Add(border);
+                    dofusProcess.Children.Add(border);
                 }
             }
         }

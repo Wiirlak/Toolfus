@@ -22,16 +22,11 @@ D:\ESGI\dotNet\Toolfus\Toolfus\obj\Debug\Toolfus_MarkupCompile.cache
 D:\ESGI\dotNet\Toolfus\Toolfus\obj\Debug\Toolfus_MarkupCompile.lref
 D:\ESGI\dotNet\Toolfus\Toolfus\obj\Debug\MainWindow.baml
 D:\ESGI\dotNet\Toolfus\Toolfus\obj\Debug\Toolfus.g.resources
-D:\ESGI\dotNet\Toolfus\Toolfus\obj\Debug\WpfApplication1.Properties.Resources.resources
 D:\ESGI\dotNet\Toolfus\Toolfus\obj\Debug\Toolfus.csproj.GenerateResource.cache
 D:\ESGI\dotNet\Toolfus\Toolfus\obj\Debug\Toolfus.exe
 D:\ESGI\dotNet\Toolfus\Toolfus\obj\Debug\Toolfus.pdb
 D:\ESGI\dotNet\Toolfus\Toolfus\obj\Debug\AccountWindow.g.cs
 D:\ESGI\dotNet\Toolfus\Toolfus\obj\Debug\AccountWindow.baml
-D:\ESGI\dotNet\Toolfus\Toolfus\obj\Debug\KeymapPage.g.cs
-D:\ESGI\dotNet\Toolfus\Toolfus\obj\Debug\KeymapPage.baml
-D:\ESGI\dotNet\Toolfus\Toolfus\obj\Debug\ChatPage.g.cs
-D:\ESGI\dotNet\Toolfus\Toolfus\obj\Debug\ChatPage.baml
 D:\ESGI\dotNet\Toolfus\Toolfus\bin\Debug\MaterialDesignColors.dll
 D:\ESGI\dotNet\Toolfus\Toolfus\bin\Debug\MaterialDesignThemes.Wpf.dll
 D:\ESGI\dotNet\Toolfus\Toolfus\bin\Debug\MaterialDesignColors.pdb
@@ -52,3 +47,8 @@ E:\Autre\Perso\Toolfus\Toolfus\obj\Debug\ChatWindow.g.cs
 E:\Autre\Perso\Toolfus\Toolfus\obj\Debug\OptionsWindow.g.cs
 E:\Autre\Perso\Toolfus\Toolfus\obj\Debug\ChatWindow.baml
 E:\Autre\Perso\Toolfus\Toolfus\obj\Debug\OptionsWindow.baml
+D:\ESGI\dotNet\Toolfus\Toolfus\obj\Debug\ChatWindow.g.cs
+D:\ESGI\dotNet\Toolfus\Toolfus\obj\Debug\OptionsWindow.g.cs
+D:\ESGI\dotNet\Toolfus\Toolfus\obj\Debug\ChatWindow.baml
+D:\ESGI\dotNet\Toolfus\Toolfus\obj\Debug\OptionsWindow.baml
+D:\ESGI\dotNet\Toolfus\Toolfus\obj\Debug\Toolfus.Properties.Resources.resources

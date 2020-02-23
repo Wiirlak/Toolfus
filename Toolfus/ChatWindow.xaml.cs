@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace WpfApplication1
+namespace Toolfus
 {
     public partial class ChatWindow : Window
     {

@@ -2,11 +2,14 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
     <PropertyGroup>
+        <ApplicationIcon>./ressources/images/TF.ico</ApplicationIcon>
+    </PropertyGroup>
+    <PropertyGroup>
         <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
         <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
         <ProjectGuid>{4D7062EF-F325-42A7-9FC7-5514C3588254}</ProjectGuid>
         <OutputType>WinExe</OutputType>
-        <RootNamespace>WpfApplication1</RootNamespace>
+        <RootNamespace>Toolfus</RootNamespace>
         <AssemblyName>Toolfus</AssemblyName>
         <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
         <FileAlignment>512</FileAlignment>
