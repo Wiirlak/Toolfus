@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.Diagnostics;
+using System.Windows;
 
 namespace Toolfus
 {
@@ -8,5 +9,12 @@ namespace Toolfus
         {
             InitializeComponent();
         }
+        
+        private void ButtonStartDofus_OnClick(object sender, RoutedEventArgs e)
+        {
+            Process.Start("C:\\Users\\Bastien\\AppData\\Local\\Programs\\zaap\\Ankama Launcher.exe");
+        } 
+            
+            
     }
 }

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
@@ -17,6 +16,11 @@ namespace Toolfus
         public MainWindow()
         {
             InitializeComponent();
+            getWindows();
+        }
+
+        private void getWindows()
+        {
             Process[] processlist = Process.GetProcesses();
             foreach (Process process in processlist)
             {
@@ -29,7 +33,7 @@ namespace Toolfus
                     checkBox.Content = process.MainWindowTitle;
                     border.Child = checkBox;
                     dofus.Add(process);
-                    // dofusProcess.Children.Add(border);
+                    dofusProcess.Children.Add(border);
                 }
             }
         }
@@ -50,6 +54,13 @@ namespace Toolfus
         {
             ChatWindow acc = new ChatWindow();
             acc.Show();
+        }
+        
+        private void ButtonRefresh_OnClick(object sender, RoutedEventArgs e)
+        {
+            dofus.Clear();
+            dofusProcess.Children.Clear();
+            getWindows();
         }
         
         /// <summary>
