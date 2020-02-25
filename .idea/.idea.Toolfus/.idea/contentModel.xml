@@ -7,6 +7,7 @@
       <e p=".git\info\exclude" t="IncludeRecursive" />
       <e p="packages" t="ExcludeRecursive" />
       <e p="Toolfus" t="IncludeRecursive">
+        <e p=".gitignore" t="Include" />
         <e p="AccountWindow.xaml" t="Include" />
         <e p="AccountWindow.xaml.cs" t="Include" />
         <e p="App.config" t="Include" />
@@ -15,6 +16,7 @@
         <e p="bin" t="ExcludeRecursive" />
         <e p="ChatWindow.xaml" t="Include" />
         <e p="ChatWindow.xaml.cs" t="Include" />
+        <e p="ClickDetector.cs" t="Include" />
         <e p="MainWindow.xaml" t="Include" />
         <e p="MainWindow.xaml.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive">

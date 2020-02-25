@@ -13,10 +13,12 @@ namespace Toolfus
     public partial class MainWindow
     {
         List<Process> dofus = new List<Process>();
+        ClickDetector clicker = new ClickDetector();
 
         public MainWindow()
         {
             InitializeComponent();
+            clicker.Subscribe();
             Process[] processlist = Process.GetProcesses();
             foreach (Process process in processlist)
             {
@@ -52,17 +54,12 @@ namespace Toolfus
             acc.Show();
         }
         
-        /// <summary>
-        /// CloseButton_Clicked
-        /// </summary>
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
+            clicker.Unsubscribe();
             Application.Current.Shutdown();
         }
 
-        /// <summary>
-        /// Minimized Button_Clicked
-        /// </summary>
         private void MinimizeButton_Click(object sender, RoutedEventArgs e)
         {
             this.WindowState = WindowState.Minimized;
