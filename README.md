@@ -8,3 +8,4 @@ Un outil révolutionnaire
  - Paramettre les touches de toutes les interractions
  - Autolog de team ( fusion des chats)
  - Faire une interface graphique
+ - Bind F5 au refresh des personnages connectés
