@@ -54,3 +54,5 @@ D:\ESGI\dotNet\Toolfus\Toolfus\obj\Debug\OptionsWindow.baml
 D:\ESGI\dotNet\Toolfus\Toolfus\obj\Debug\Toolfus.Properties.Resources.resources
 D:\ESGI\dotNet\Toolfus\Toolfus\bin\Debug\Gma.System.MouseKeyHook.dll
 D:\ESGI\dotNet\Toolfus\Toolfus\obj\Debug\Toolfus_Content.g.cs
+D:\ESGI\dotNet\Toolfus\Toolfus\bin\Debug\WindowsInput.dll
+D:\ESGI\dotNet\Toolfus\Toolfus\bin\Debug\WindowsInput.xml
