@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Forms;
@@ -40,7 +41,7 @@ namespace Toolfus
         
         public static void ClickOnPoint(IntPtr wndHandle , Point clientPoint)
         {
-            var oldPos = Cursor.Position;
+            /*var oldPos = Cursor.Position;
 
             /// get screen coordinates
             ClientToScreen(wndHandle, ref clientPoint);
@@ -60,7 +61,7 @@ namespace Toolfus
             SendInput((uint)inputs.Length, inputs, Marshal.SizeOf(typeof(INPUT)));
 
             /// return mouse 
-            Cursor.Position = oldPos;
+            Cursor.Position = oldPos;*/
         }
 
     }

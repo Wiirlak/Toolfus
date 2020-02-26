@@ -1,13 +1,18 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Gma.System.MouseKeyHook;
 using System.Diagnostics;
+using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Forms;
+using System.Windows.Input;
 
 namespace Toolfus
 {
     public class ClickDetector
     {
+        const uint WM_KEYDOWN = 0x100;
+        const uint WM_KEYUP = 0x101;
         private IKeyboardMouseEvents m_GlobalHook;
         private WindowUtils wu;
         public void Subscribe()
@@ -22,7 +27,21 @@ namespace Toolfus
 
         private void GlobalHookKeyPress(object sender, KeyPressEventArgs e)
         {
-            // Debug.WriteLine("KeyPress: \t{0}", e.KeyChar);
+            Debug.WriteLine("KeyPress: \t{0}", e.KeyChar);
+            if (e.KeyChar == 'k' || e.KeyChar == 'K')
+            {
+                this.Unsubscribe();
+            }
+            else
+            {
+                // foreach (Process process in Data.dofus)
+                // {
+                //     MainWindow.SendMessage(process.MainWindowHandle, WM_KEYDOWN, IntPtr.Zero, (IntPtr)e.KeyChar);
+                //     MainWindow.SendMessage(process.MainWindowHandle, WM_KEYUP, IntPtr.Zero, (IntPtr)e.KeyChar);
+                // }
+            }
+            
+            
         }
 
         private void GlobalHookMouseUpExt(object sender, MouseEventExtArgs e)
@@ -31,6 +50,12 @@ namespace Toolfus
                 Debug.WriteLine("Clic: \tX:{0} | Y:{1}", e.X, e.Y);
             // Debug.WriteLine("Window : " + wu.GetActiveWindowTitle() );
             // Debug.WriteLine("Process : " + wu.GetActiveProcessName() );
+            foreach (Process process in Data.dofus)
+            {
+                MainWindow.SendMessage(process.MainWindowHandle, 513U, IntPtr.Zero, MainWindow.LParams(e.X, e.Y));
+                MainWindow.SendMessage(process.MainWindowHandle, 514U, IntPtr.Zero, MainWindow.LParams(e.X, e.Y));
+            }
+            
         }
 
         public void DofusProcessClick(List<Process> process, Point clic)
@@ -44,7 +69,7 @@ namespace Toolfus
         
         public void Unsubscribe()
         {
-            m_GlobalHook.KeyPress -= GlobalHookKeyPress;
+            //m_GlobalHook.KeyPress -= GlobalHookKeyPress;
             m_GlobalHook.MouseUpExt -= GlobalHookMouseUpExt;
             m_GlobalHook.Dispose();
         }

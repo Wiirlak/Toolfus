@@ -72,6 +72,7 @@
             <SubType>Designer</SubType>
         </ApplicationDefinition>
         <Compile Include="ClickSimulator.cs" />
+        <Compile Include="Data.cs" />
         <Compile Include="WindowUtils.cs" />
         <Page Include="AccountWindow.xaml" />
         <Page Include="ChatWindow.xaml" />
