@@ -8,5 +8,5 @@
 out
 gen
 
-Toolfus/obj/Debug/*
-Toolfus/bin/Debug/*
+Toolfus/obj
+Toolfus/bin

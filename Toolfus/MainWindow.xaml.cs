@@ -68,13 +68,6 @@ namespace Toolfus
         
         
         
-        [DllImport("user32.dll")]
-        public static extern int SendMessage(IntPtr hWnd, uint msg, IntPtr wParam, IntPtr lParam);
-        
-        public static IntPtr LParams(int wLow, int wHigh)
-        {
-            return (IntPtr) ((int) (short) wHigh << 16 | wLow & (int) ushort.MaxValue);
-        }
     }
     
 }

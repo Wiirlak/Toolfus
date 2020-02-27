@@ -36,9 +36,7 @@ namespace Toolfus
             public UInt32 Time;
             public IntPtr ExtraInfo;
         }
-        
-        
-        
+
         public static void ClickOnPoint(IntPtr wndHandle , Point clientPoint)
         {
             /*var oldPos = Cursor.Position;
@@ -62,6 +60,14 @@ namespace Toolfus
 
             /// return mouse 
             Cursor.Position = oldPos;*/
+        }
+        
+        [DllImport("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, uint msg, IntPtr wParam, IntPtr lParam);
+        
+        public static IntPtr LParams(int wLow, int wHigh)
+        {
+            return (IntPtr) ((int) (short) wHigh << 16 | wLow & (int) ushort.MaxValue);
         }
 
     }
