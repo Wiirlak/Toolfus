@@ -69,6 +69,44 @@ namespace Toolfus
         {
             return (IntPtr) ((int) (short) wHigh << 16 | wLow & (int) ushort.MaxValue);
         }
+        
+        [DllImport("user32.dll", SetLastError = true)]
+        static extern bool GetWindowRect(IntPtr hWnd, ref Data.RECT Rect);
+        
+        public static void MoveCaracter(Char direction)
+        {
+            foreach (var process in Data.dofus)
+            {
+                IntPtr handle = process.MainWindowHandle;
+                Data.RECT Rect = new Data.RECT();
+                if (GetWindowRect(handle, ref Rect))
+                {
+                    switch (direction)
+                    {
+                        case 'u':
+                            ClickSimulator.SendMessage(process.MainWindowHandle, 513U, IntPtr.Zero, ClickSimulator.LParams(Rect.right/2,10));
+                            ClickSimulator.SendMessage(process.MainWindowHandle, 514U, IntPtr.Zero, ClickSimulator.LParams(Rect.right/2,10));
+                            Debug.WriteLine("Click up to : \t{0} {1}", Rect.right/2,25);
+                            break;
+                        case 'd':
+                            ClickSimulator.SendMessage(process.MainWindowHandle, 513U, IntPtr.Zero, ClickSimulator.LParams(Rect.right/2,Rect.bottom - 170));
+                            ClickSimulator.SendMessage(process.MainWindowHandle, 514U, IntPtr.Zero, ClickSimulator.LParams(Rect.right/2,Rect.bottom - 170));
+                            Debug.WriteLine("Click down to : \t{0} {1}", Rect.right/2, Rect.bottom - 55);
+                            break;
+                        case 'l':
+                            ClickSimulator.SendMessage(process.MainWindowHandle, 513U, IntPtr.Zero, ClickSimulator.LParams(0,Rect.bottom/2));
+                            ClickSimulator.SendMessage(process.MainWindowHandle, 514U, IntPtr.Zero, ClickSimulator.LParams(0,Rect.bottom/2));
+                            Debug.WriteLine("Click left to : \t{0} {1}", 0, Rect.bottom/2);
+                            break;
+                        case 'r':
+                            ClickSimulator.SendMessage(process.MainWindowHandle, 513U, IntPtr.Zero, ClickSimulator.LParams(Rect.right-20,Rect.bottom/2));
+                            ClickSimulator.SendMessage(process.MainWindowHandle, 514U, IntPtr.Zero, ClickSimulator.LParams(Rect.right-20,Rect.bottom/2));
+                            Debug.WriteLine("Click right to : \t{0} {1}", Rect.right -20, Rect.bottom/2);
+                            break;
+                    }
+                }
+            }
+        }
 
     }
 }

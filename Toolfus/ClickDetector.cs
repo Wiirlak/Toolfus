@@ -38,8 +38,24 @@ namespace Toolfus
                 else
                     this.Subscribe();
             }
-            else
+            else if (e.KeyChar == '8')
             {
+                ClickSimulator.MoveCaracter('u');
+            }
+            else if (e.KeyChar == '5')
+            {
+                ClickSimulator.MoveCaracter('d');
+            }
+            else if (e.KeyChar == '4')
+            {
+                ClickSimulator.MoveCaracter('l');
+            }
+            else if (e.KeyChar == '6')
+            {
+                ClickSimulator.MoveCaracter('r');
+            }
+            else
+           {
                 // foreach (Process process in Data.dofus)
                 // {
                 //     MainWindow.SendMessage(process.MainWindowHandle, WM_KEYDOWN, IntPtr.Zero, (IntPtr)e.KeyChar);

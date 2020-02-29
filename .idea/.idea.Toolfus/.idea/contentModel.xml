@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\ViZua\.Rider2019.3\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\ViZua\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_Toolfus.-2041853132.00" t="ExcludeRecursive" />
-    <e p="D:\ESGI\dotNet\Toolfus" t="IncludeFlat">
-      <e p=".git\info\exclude" t="IncludeRecursive" />
+    <e p="C:\Users\Bastien\.Rider2019.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Bastien\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_Toolfus.-70558621.00" t="ExcludeRecursive" />
+    <e p="E:\Autre\Perso\Toolfus" t="IncludeFlat">
       <e p="packages" t="ExcludeRecursive" />
       <e p="Toolfus" t="IncludeRecursive">
         <e p=".gitignore" t="Include" />
