@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Configuration;
 
 namespace Toolfus
@@ -13,27 +14,53 @@ namespace Toolfus
 
         public Keybind()
         {
-            if (ConfigurationManager.AppSettings["default"] == "true")
-            {
-                Up = '8';
-                Down = '5';
-                Left = '4';
-                Right = '6';
-                Follow = '2';
-            }
-            else
-            {
-                Up = ConfigurationManager.AppSettings.GetValues("KeyUp")[0][0];
-                Down = ConfigurationManager.AppSettings.GetValues("KeyDown")[0][0];
-                Left = ConfigurationManager.AppSettings.GetValues("KeyLeft")[0][0];
-                Right = ConfigurationManager.AppSettings.GetValues("KeyRight")[0][0];
-                Follow = ConfigurationManager.AppSettings.GetValues("KeyFollow")[0][0];
-            }
+            if (ConfigurationManager.AppSettings["default"] == "true") SetDefault();
+            getConfig();
         }
 
-        public void updateKey(string configName, string newValue)
+        public void getConfig()
         {
-            
+            Up = ConfigurationManager.AppSettings.GetValues("KeyUp")[0][0];
+            Down = ConfigurationManager.AppSettings.GetValues("KeyDown")[0][0];
+            Left = ConfigurationManager.AppSettings.GetValues("KeyLeft")[0][0];
+            Right = ConfigurationManager.AppSettings.GetValues("KeyRight")[0][0];
+            Follow = ConfigurationManager.AppSettings.GetValues("KeyFollow")[0][0];
+        }
+
+        public bool InKeyList(char a)
+        {
+            char[] keys = {Up,Down,Left,Right} ;
+            return ((IList) keys).Contains(a);
+        }
+
+        public void SetDefault()
+        {
+            Edit("KeyUp", "8");
+            Edit("KeyDown", "5");
+            Edit("KeyLeft", "4");
+            Edit("KeyRight", "6");
+            Edit("KeyFollow", "2");
+            Edit("default", "");
+        }
+
+        public void Edit(string key, string value)
+        {
+            try
+            {
+                var configFile = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+                var settings = configFile.AppSettings.Settings;
+                
+                if (settings[key] == null) settings.Add(key, value);
+                else settings[key].Value = value;
+                
+                configFile.Save(ConfigurationSaveMode.Modified);
+                ConfigurationManager.RefreshSection(configFile.AppSettings.SectionInformation.Name);
+            }
+            catch (ConfigurationErrorsException)
+            {
+                Console.WriteLine("Error writing app settings");
+            }
+            getConfig();
         }
     }
 }

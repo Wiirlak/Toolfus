@@ -16,5 +16,7 @@ namespace Toolfus
             public int right;
             public int bottom;
         }
+        
+        public static Keybind KeyMap = new Keybind();
     }
 }
