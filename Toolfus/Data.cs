@@ -16,7 +16,5 @@ namespace Toolfus
             public int right;
             public int bottom;
         }
-
-
     }
 }

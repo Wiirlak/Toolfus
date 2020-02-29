@@ -75,7 +75,7 @@ namespace Toolfus
         
         public static void MoveCaracter(Char direction)
         {
-            foreach (var process in Data.dofus)
+            foreach (var process in MainWindow.GetCheckedProcess())
             {
                 IntPtr handle = process.MainWindowHandle;
                 Data.RECT Rect = new Data.RECT();

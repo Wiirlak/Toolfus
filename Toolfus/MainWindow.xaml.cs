@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Windows;
@@ -13,12 +14,14 @@ namespace Toolfus
     public partial class MainWindow
     {
         ClickDetector clicker = new ClickDetector();
+        public static StackPanel stackPanel;
 
         public MainWindow()
         {
             InitializeComponent();
             clicker.Subscribe();
             getWindows();
+            stackPanel = dofusProcess;
         }
 
         private void getWindows()
@@ -77,6 +80,35 @@ namespace Toolfus
         private void MinimizeButton_Click(object sender, RoutedEventArgs e)
         {
             this.WindowState = WindowState.Minimized;
+        }
+        
+        public static List<Process> GetCheckedProcess()
+        {
+            List<Process> result = new List<Process>();
+            foreach (Border child in  stackPanel.Children)
+            {
+                if (child.Child is CheckBox)
+                {
+                    CheckBox cb = (CheckBox) child.Child;
+                    if((bool)cb.IsChecked)
+                    {
+                        result.Add(FindProcess(cb.Content.ToString()));
+                    }
+                }
+            }
+
+            return result;
+        }
+
+        public  static Process FindProcess(String processName)
+        {
+            foreach (var process in Data.dofus)
+            {
+                if (process.MainWindowTitle == processName)
+                    return process;
+            }
+
+            return null;
         }
 
         
