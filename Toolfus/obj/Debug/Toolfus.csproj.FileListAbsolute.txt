@@ -59,4 +59,3 @@ D:\ESGI\dotNet\Toolfus\Toolfus\bin\Debug\WindowsInput.xml
 E:\Autre\Perso\Toolfus\Toolfus\bin\Debug\Gma.System.MouseKeyHook.dll
 E:\Autre\Perso\Toolfus\Toolfus\bin\Debug\WindowsInput.dll
 E:\Autre\Perso\Toolfus\Toolfus\bin\Debug\WindowsInput.xml
-E:\Autre\Perso\Toolfus\Toolfus\obj\Debug\Toolfus_Content.g.cs
