@@ -25,26 +25,11 @@
             </TextBlock>
         </StackPanel>
         <ScrollViewer HorizontalScrollBarVisibility="Auto" Grid.Row="1">
-            <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Name="dofusProcess">
-                <Grid.Resources >
-                    <Style TargetType="Border" >
-                        <Setter Property="Padding" Value="5,5,5,5" />
-                    </Style>
-                </Grid.Resources>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>
-            </Grid>
+            <StackPanel Name="dofusProcess">
+            </StackPanel>
         </ScrollViewer>
         <StackPanel Orientation="Horizontal" Grid.Row="2" Margin="10,10,10,20">
+            <Button Click="ButtonRefresh_OnClick" Margin="10,0,0,0" MinWidth="75">Rafraichir</Button>
             <Button Click="ButtonChat_OnClick" Margin="10,0,0,0" MinWidth="75">Chat</Button>
             <Button Click="ButtonAccount_OnClick" Margin="10,0,0,0" MinWidth="75">Compte</Button>
             <Button Click="ButtonOptions_OnClick" Margin="10,0,0,0" MinWidth="75">Raccourcis</Button>
