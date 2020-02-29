@@ -6,6 +6,7 @@
     <e p="E:\Autre\Perso\Toolfus" t="IncludeFlat">
       <e p="packages" t="ExcludeRecursive" />
       <e p="Toolfus" t="IncludeRecursive">
+        <e p=".gitignore" t="Include" />
         <e p="AccountWindow.xaml" t="Include" />
         <e p="AccountWindow.xaml.cs" t="Include" />
         <e p="App.config" t="Include" />
@@ -14,6 +15,9 @@
         <e p="bin" t="ExcludeRecursive" />
         <e p="ChatWindow.xaml" t="Include" />
         <e p="ChatWindow.xaml.cs" t="Include" />
+        <e p="ClickDetector.cs" t="Include" />
+        <e p="ClickSimulator.cs" t="Include" />
+        <e p="Data.cs" t="Include" />
         <e p="MainWindow.xaml" t="Include" />
         <e p="MainWindow.xaml.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive">
@@ -23,6 +27,7 @@
             <e p="ChatWindow.g.cs" t="Include" />
             <e p="MainWindow.g.cs" t="Include" />
             <e p="OptionsWindow.g.cs" t="Include" />
+            <e p="Toolfus_Content.g.cs" t="Include" />
           </e>
         </e>
         <e p="OptionsWindow.xaml" t="Include" />
@@ -34,6 +39,7 @@
           <e p="Resources.resx" t="Include" />
         </e>
         <e p="Toolfus.csproj" t="IncludeRecursive" />
+        <e p="WindowUtils.cs" t="Include" />
       </e>
       <e p="Toolfus.sln" t="IncludeFlat" />
     </e>

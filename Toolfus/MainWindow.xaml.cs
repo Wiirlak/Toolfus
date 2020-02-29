@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics;
+using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -11,11 +12,12 @@ namespace Toolfus
     /// </summary>
     public partial class MainWindow
     {
-        List<Process> dofus = new List<Process>();
+        ClickDetector clicker = new ClickDetector();
 
         public MainWindow()
         {
             InitializeComponent();
+            clicker.Subscribe();
             getWindows();
         }
 
@@ -32,7 +34,7 @@ namespace Toolfus
                     checkBox.Margin = new Thickness { Left = 5, Top = 0, Right = 0, Bottom = 0 };
                     checkBox.Content = process.MainWindowTitle;
                     border.Child = checkBox;
-                    dofus.Add(process);
+                    Data.dofus.Add(process);
                     dofusProcess.Children.Add(border);
                 }
             }
@@ -58,7 +60,7 @@ namespace Toolfus
         
         private void ButtonRefresh_OnClick(object sender, RoutedEventArgs e)
         {
-            dofus.Clear();
+            Data.dofus.Clear();
             dofusProcess.Children.Clear();
             getWindows();
         }
@@ -68,16 +70,18 @@ namespace Toolfus
         /// </summary>
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
+            clicker.Unsubscribe();
             Application.Current.Shutdown();
         }
 
-        /// <summary>
-        /// Minimized Button_Clicked
-        /// </summary>
         private void MinimizeButton_Click(object sender, RoutedEventArgs e)
         {
             this.WindowState = WindowState.Minimized;
         }
+
+        
+        
+        
     }
     
 }
