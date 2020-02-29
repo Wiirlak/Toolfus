@@ -30,55 +30,61 @@ namespace Toolfus
 
         private void GlobalHookKeyPress(object sender, KeyPressEventArgs e)
         {
-            Debug.WriteLine("KeyPress: \t{0}", e.KeyChar);
-            if (e.KeyChar == 'k' || e.KeyChar == 'K')
+            if (wu.GetActiveProcessName().Equals("Dofus"))
             {
-                if (sub)
-                    this.Unsubscribe();
+                Debug.WriteLine("KeyPress: \t{0}", e.KeyChar);
+                if (e.KeyChar == 'k' || e.KeyChar == 'K')
+                {
+                    if (sub)
+                        this.Unsubscribe();
+                    else
+                        this.Subscribe();
+                }
+                else if (e.KeyChar == '8')
+                {
+                    ClickSimulator.MoveCaracter('u');
+                }
+                else if (e.KeyChar == '5')
+                {
+                    ClickSimulator.MoveCaracter('d');
+                }
+                else if (e.KeyChar == '4')
+                {
+                    ClickSimulator.MoveCaracter('l');
+                }
+                else if (e.KeyChar == '6')
+                {
+                    ClickSimulator.MoveCaracter('r');
+                }
                 else
-                    this.Subscribe();
+                {
+                    // foreach (Process process in Data.dofus)
+                    // {
+                    //     MainWindow.SendMessage(process.MainWindowHandle, WM_KEYDOWN, IntPtr.Zero, (IntPtr)e.KeyChar);
+                    //     MainWindow.SendMessage(process.MainWindowHandle, WM_KEYUP, IntPtr.Zero, (IntPtr)e.KeyChar);
+                    // }
+                }
             }
-            else if (e.KeyChar == '8')
-            {
-                ClickSimulator.MoveCaracter('u');
-            }
-            else if (e.KeyChar == '5')
-            {
-                ClickSimulator.MoveCaracter('d');
-            }
-            else if (e.KeyChar == '4')
-            {
-                ClickSimulator.MoveCaracter('l');
-            }
-            else if (e.KeyChar == '6')
-            {
-                ClickSimulator.MoveCaracter('r');
-            }
-            else
-           {
-                // foreach (Process process in Data.dofus)
-                // {
-                //     MainWindow.SendMessage(process.MainWindowHandle, WM_KEYDOWN, IntPtr.Zero, (IntPtr)e.KeyChar);
-                //     MainWindow.SendMessage(process.MainWindowHandle, WM_KEYUP, IntPtr.Zero, (IntPtr)e.KeyChar);
-                // }
-            }
-            
-            
+
         }
 
         private void GlobalHookMouseUpExt(object sender, MouseEventExtArgs e)
         {
-            if(wu.GetActiveProcessName().Equals("Dofus"))
-                Debug.WriteLine("Clic: \tX:{0} | Y:{1}", e.X, e.Y);
-            Debug.WriteLine("Clic: \tX:{0} | Y:{1}", e.X, e.Y);
-            // Debug.WriteLine("Window : " + wu.GetActiveWindowTitle() );
-            // Debug.WriteLine("Process : " + wu.GetActiveProcessName() );
-            foreach (Process process in Data.dofus)
+            if (wu.GetActiveProcessName().Equals("Dofus"))
             {
-                ClickSimulator.SendMessage(process.MainWindowHandle, 513U, IntPtr.Zero, ClickSimulator.LParams(e.X, e.Y));
-                ClickSimulator.SendMessage(process.MainWindowHandle, 514U, IntPtr.Zero, ClickSimulator.LParams(e.X, e.Y));
+                Debug.WriteLine("Clic: \tX:{0} | Y:{1}", e.X, e.Y);
+                Debug.WriteLine("Clic: \tX:{0} | Y:{1}", e.X, e.Y);
+                // Debug.WriteLine("Window : " + wu.GetActiveWindowTitle() );
+                // Debug.WriteLine("Process : " + wu.GetActiveProcessName() );
+                foreach (Process process in Data.dofus)
+                {
+                    ClickSimulator.SendMessage(process.MainWindowHandle, 513U, IntPtr.Zero,
+                        ClickSimulator.LParams(e.X, e.Y));
+                    ClickSimulator.SendMessage(process.MainWindowHandle, 514U, IntPtr.Zero,
+                        ClickSimulator.LParams(e.X, e.Y));
+                }
             }
-            
+
         }
 
         public void DofusProcessClick(List<Process> process, Point clic)

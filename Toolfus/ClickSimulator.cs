@@ -89,9 +89,9 @@ namespace Toolfus
                             Debug.WriteLine("Click up to : \t{0} {1}", Rect.right/2,25);
                             break;
                         case 'd':
-                            ClickSimulator.SendMessage(process.MainWindowHandle, 513U, IntPtr.Zero, ClickSimulator.LParams(Rect.right/2,Rect.bottom - 170));
-                            ClickSimulator.SendMessage(process.MainWindowHandle, 514U, IntPtr.Zero, ClickSimulator.LParams(Rect.right/2,Rect.bottom - 170));
-                            Debug.WriteLine("Click down to : \t{0} {1}", Rect.right/2, Rect.bottom - 55);
+                            ClickSimulator.SendMessage(process.MainWindowHandle, 513U, IntPtr.Zero, ClickSimulator.LParams(Rect.right / 2,Rect.bottom - (int) (Rect.bottom *0.15)));
+                            ClickSimulator.SendMessage(process.MainWindowHandle, 514U, IntPtr.Zero, ClickSimulator.LParams(Rect.right / 2,Rect.bottom - (int) (Rect.bottom * 0.15)));
+                            Debug.WriteLine("Click down to : \t{0} {1}", Rect.right/2, Rect.bottom - (int) (Rect.bottom *0.15));
                             break;
                         case 'l':
                             ClickSimulator.SendMessage(process.MainWindowHandle, 513U, IntPtr.Zero, ClickSimulator.LParams(0,Rect.bottom/2));
