@@ -6,7 +6,6 @@
     <e p="E:\Autre\Perso\Toolfus" t="IncludeFlat">
       <e p="packages" t="ExcludeRecursive" />
       <e p="Toolfus" t="IncludeRecursive">
-        <e p=".gitignore" t="Include" />
         <e p="AccountWindow.xaml" t="Include" />
         <e p="AccountWindow.xaml.cs" t="Include" />
         <e p="App.config" t="Include" />

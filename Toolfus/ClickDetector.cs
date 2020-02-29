@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using Gma.System.MouseKeyHook;
 using System.Diagnostics;
-using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Forms;
-using System.Windows.Input;
 using MouseEventArgs = System.Windows.Forms.MouseEventArgs;
-using MouseEventHandler = System.Windows.Forms.MouseEventHandler;
 
 namespace Toolfus
 {
@@ -34,27 +32,28 @@ namespace Toolfus
         {
             if (wu.GetActiveProcessName().Equals("Dofus"))
             {
+                
                 Debug.WriteLine("KeyPress: \t{0}", e.KeyChar);
-                if (e.KeyChar == 'k' || e.KeyChar == 'K')
+                if (e.KeyChar == ConfigurationManager.AppSettings.GetValues("KeyFollow")[0][0])
                 {
                     if (sub)
                         this.Unsubscribe();
                     else
                         this.Subscribe();
                 }
-                else if (e.KeyChar == '8')
+                else if (e.KeyChar == ConfigurationManager.AppSettings.GetValues("KeyUp")[0][0])
                 {
                     ClickSimulator.MoveCaracter('u');
                 }
-                else if (e.KeyChar == '5')
+                else if (e.KeyChar == ConfigurationManager.AppSettings.GetValues("KeyDown")[0][0])
                 {
                     ClickSimulator.MoveCaracter('d');
                 }
-                else if (e.KeyChar == '4')
+                else if (e.KeyChar == ConfigurationManager.AppSettings.GetValues("KeyLeft")[0][0])
                 {
                     ClickSimulator.MoveCaracter('l');
                 }
-                else if (e.KeyChar == '6')
+                else if (e.KeyChar == ConfigurationManager.AppSettings.GetValues("KeyRight")[0][0])
                 {
                     ClickSimulator.MoveCaracter('r');
                 }
