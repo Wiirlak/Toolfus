@@ -24,9 +24,7 @@ namespace Toolfus
             IntPtr handle = GetForegroundWindow();
 
             if (GetWindowText(handle, Buff, nChars) > 0)
-            {
                 return Buff.ToString();
-            }
             return null;
         }
         
@@ -42,7 +40,7 @@ namespace Toolfus
             uint pid;
             GetWindowThreadProcessId(hwnd, out pid);
 
-            foreach (Process p in System.Diagnostics.Process.GetProcesses())
+            foreach (Process p in Process.GetProcesses())
             {
                 if (p.Id == pid)
                     return p.ProcessName;

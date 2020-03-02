@@ -30,7 +30,7 @@ namespace Toolfus
             Process[] processlist = Process.GetProcesses();
             foreach (Process process in processlist)
             {
-                if (process.MainWindowTitle.Contains("Dofus"))
+                if (process.ProcessName.Equals("Dofus"))
                 {
                     // dofus.Add("Process: "+process.ProcessName +" ID: "+process.Id+" Window title: "+process.MainWindowTitle+"");
                     Border border = new Border();

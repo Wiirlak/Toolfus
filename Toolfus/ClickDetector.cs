@@ -27,33 +27,41 @@ namespace Toolfus
             if (wu.GetActiveProcessName().Equals("Dofus"))
             {
                 Debug.WriteLine("KeyPress: \t{0}", e.KeyChar);
-                if (e.KeyChar == Data.KeyMap.Follow) follow = !follow;
-                else if (follow && Data.KeyMap.InKeyList(e.KeyChar)) ClickSimulator.MoveCaracter(e.KeyChar);
+                if (e.KeyChar == Data.KeyMap.Follow) 
+                    follow = !follow;
+                else if (follow && Data.KeyMap.InKeyList(e.KeyChar)) 
+                    ClickSimulator.MoveCaracter(e.KeyChar);
             }
 
         }
 
         private void GlobalHookMouseClick(object sender, MouseEventArgs e)
         {
-            if(follow && wu.GetActiveProcessName().Equals("Dofus")) DofusClick(e.X, e.Y);
+            if (follow && wu.GetActiveProcessName().Equals("Dofus"))
+            {
+                if (e.Button == MouseButtons.Left)
+                    DofusClick(e.X, e.Y, 'l');
+                if (e.Button == MouseButtons.Right)
+                    DofusClick(e.X, e.Y, 'r');
+            }
         }
 
-        private void DofusClick(int x, int y)
+        private void DofusClick(int x, int y, char lr)
         {
             Debug.WriteLine("Clic: \tX:{0} | Y:{1}", x, y);
             Debug.WriteLine("Clic: \tX:{0} | Y:{1}", x, y);
             foreach (Process process in MainWindow.GetCheckedProcess())
             {
-                ClickSimulator.SendMessage(process.MainWindowHandle, 513U, IntPtr.Zero,
+                ClickSimulator.SendMessage(process.MainWindowHandle, (lr=='r'?516U:513U), IntPtr.Zero,
                     ClickSimulator.LParams(x, y - 30));
-                ClickSimulator.SendMessage(process.MainWindowHandle, 514U, IntPtr.Zero,
+                ClickSimulator.SendMessage(process.MainWindowHandle, (lr=='r'?517U:514U), IntPtr.Zero,
                     ClickSimulator.LParams(x, y - 30));
             }
         }
         
         public void Unsubscribe()
         {
-            //m_GlobalHook.KeyPress -= GlobalHookKeyPress;
+            m_GlobalHook.KeyPress -= GlobalHookKeyPress;
             m_GlobalHook.MouseClick -= GlobalHookMouseClick;
             m_GlobalHook.Dispose();
         }
