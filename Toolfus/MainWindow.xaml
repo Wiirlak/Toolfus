@@ -25,8 +25,10 @@
             </TextBlock>
         </StackPanel>
         <ScrollViewer HorizontalScrollBarVisibility="Auto" Grid.Row="1">
-            <StackPanel Name="dofusProcess">
-            </StackPanel>
+            <ListView 
+                Name="DofusProcess" 
+                AllowDrop="True" >
+            </ListView>
         </ScrollViewer>
         <StackPanel Orientation="Horizontal" Grid.Row="2" Margin="10,10,10,20">
             <Button Click="ButtonRefresh_OnClick" Margin="10,0,0,0" MinWidth="75">Rafraichir</Button>
