@@ -8,7 +8,8 @@ namespace Toolfus
     public class Data
     {
         // public static List<Process> dofus = new List<Process>();
-        public static ObservableCollection<Process> dofus = new ObservableCollection<Process>();
+        public static ObservableCollection<Process> DofusList = new ObservableCollection<Process>();
+        public static Process CurrentDofus;
         
         [StructLayout(LayoutKind.Sequential)]
         public struct RECT

@@ -33,7 +33,9 @@ namespace Toolfus
             {
                 if (process.ProcessName.Equals("Dofus"))
                 {
-                    Data.dofus.Add(process);
+                    if (Data.DofusList.Count < 1)
+                        Data.CurrentDofus = process;
+                    Data.DofusList.Add(process);
                     
                     // dofus.Add("Process: "+process.ProcessName +" ID: "+process.Id+" Window title: "+process.MainWindowTitle+"");
                     CheckBox checkBox =  new CheckBox();
@@ -66,7 +68,7 @@ namespace Toolfus
         
         private void ButtonRefresh_OnClick(object sender, RoutedEventArgs e)
         {
-            Data.dofus.Clear();
+            Data.DofusList.Clear();
             DofusProcess.Items.Clear();
             getWindows();
         }
@@ -99,7 +101,7 @@ namespace Toolfus
 
         public  static Process FindProcess(String processName)
         {
-            foreach (var process in Data.dofus)
+            foreach (var process in Data.DofusList)
             {
                 if (process.MainWindowTitle == processName)
                     return process;
@@ -149,7 +151,6 @@ namespace Toolfus
                 }
             }
         }
-        
     }
     
 }

@@ -11,23 +11,25 @@ namespace Toolfus
         public char Left;
         public char Right;
         public char Follow;
+        public char Switch;
 
         public Keybind()
         {
-            if (ConfigurationManager.AppSettings["default"] == "true") SetDefault();
-            getConfig();
+            // SetDefault();
+            GetConfig();
         }
 
-        public void getConfig()
+        public void GetConfig()
         {
-            Up = ConfigurationManager.AppSettings.GetValues("KeyUp")[0][0];
-            Down = ConfigurationManager.AppSettings.GetValues("KeyDown")[0][0];
-            Left = ConfigurationManager.AppSettings.GetValues("KeyLeft")[0][0];
-            Right = ConfigurationManager.AppSettings.GetValues("KeyRight")[0][0];
+            Up     = ConfigurationManager.AppSettings.GetValues("KeyUp")    [0][0];
+            Down   = ConfigurationManager.AppSettings.GetValues("KeyDown")  [0][0];
+            Left   = ConfigurationManager.AppSettings.GetValues("KeyLeft")  [0][0];
+            Right  = ConfigurationManager.AppSettings.GetValues("KeyRight") [0][0];
             Follow = ConfigurationManager.AppSettings.GetValues("KeyFollow")[0][0];
+            Switch = ConfigurationManager.AppSettings.GetValues("KeySwitch")[0][0];
         }
 
-        public bool InKeyList(char a)
+        public bool InMoveKeyList(char a)
         {
             char[] keys = {Up,Down,Left,Right} ;
             return ((IList) keys).Contains(a);
@@ -35,12 +37,12 @@ namespace Toolfus
 
         public void SetDefault()
         {
-            Edit("KeyUp", "8");
-            Edit("KeyDown", "5");
-            Edit("KeyLeft", "4");
-            Edit("KeyRight", "6");
+            Edit("KeyUp",     "8");
+            Edit("KeyDown",   "5");
+            Edit("KeyLeft",   "4");
+            Edit("KeyRight",  "6");
             Edit("KeyFollow", "2");
-            Edit("default", "");
+            Edit("KeySwitch", "9");
         }
 
         public void Edit(string key, string value)
@@ -60,7 +62,7 @@ namespace Toolfus
             {
                 Console.WriteLine("Error writing app settings");
             }
-            getConfig();
+            GetConfig();
         }
     }
 }

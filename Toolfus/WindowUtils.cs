@@ -7,6 +7,8 @@ namespace Toolfus
 {
     public class WindowUtils
     {
+        [DllImport("user32.dll")]
+        static extern bool SetForegroundWindow(IntPtr hWnd);
                 
         [DllImport("user32.dll")]
         static extern IntPtr GetForegroundWindow();
@@ -47,6 +49,20 @@ namespace Toolfus
             }
 
             return "Unknown";
+        }
+        
+        public void changeFocusWindow()
+        {
+            if (Data.CurrentDofus == null) 
+                return;
+            Process cur = Data.CurrentDofus;
+            int curIndex = Data.DofusList.IndexOf(cur);
+            if (curIndex == Data.DofusList.Count - 1)
+                curIndex = - 1;
+            Process next = Data.DofusList[curIndex + 1];
+            SetForegroundWindow(next.MainWindowHandle);
+            Debug.WriteLine(" okkkkk " + cur.MainWindowTitle);
+            Data.CurrentDofus = next;
         }
     }
 }

@@ -8,36 +8,38 @@ namespace Toolfus
 {
     public class ClickDetector
     {
-        private IKeyboardMouseEvents m_GlobalHook;
-        private WindowUtils wu;
-        private bool follow;
+        private IKeyboardMouseEvents _globalHook;
+        private WindowUtils _wUtils;
+        private bool _follow;
         
         public void Subscribe()
         {
             // Note: for the application hook, use the Hook.AppEvents() instead
-            m_GlobalHook = Hook.GlobalEvents();
-            wu = new WindowUtils();
-            m_GlobalHook.MouseClick += GlobalHookMouseClick;
-            m_GlobalHook.KeyPress += GlobalHookKeyPress;
-            follow = false;
+            _globalHook = Hook.GlobalEvents();
+            _wUtils = new WindowUtils();
+            _globalHook.MouseClick += GlobalHookMouseClick;
+            _globalHook.KeyPress += GlobalHookKeyPress;
+            _follow = false;
         }
 
         private void GlobalHookKeyPress(object sender, KeyPressEventArgs e)
         {
-            if (wu.GetActiveProcessName().Equals("Dofus"))
+            if (_wUtils.GetActiveProcessName().Equals("Dofus"))
             {
                 Debug.WriteLine("KeyPress: \t{0}", e.KeyChar);
                 if (e.KeyChar == Data.KeyMap.Follow) 
-                    follow = !follow;
-                else if (follow && Data.KeyMap.InKeyList(e.KeyChar)) 
+                    _follow = !_follow;
+                else if (_follow && Data.KeyMap.InMoveKeyList(e.KeyChar)) 
                     ClickSimulator.MoveCaracter(e.KeyChar);
             }
+            if (e.KeyChar == Data.KeyMap.Switch)
+                _wUtils.changeFocusWindow();
 
         }
 
         private void GlobalHookMouseClick(object sender, MouseEventArgs e)
         {
-            if (follow && wu.GetActiveProcessName().Equals("Dofus"))
+            if (_follow && _wUtils.GetActiveProcessName().Equals("Dofus"))
             {
                 if (e.Button == MouseButtons.Left)
                     DofusClick(e.X, e.Y, 'l');
@@ -61,9 +63,9 @@ namespace Toolfus
         
         public void Unsubscribe()
         {
-            m_GlobalHook.KeyPress -= GlobalHookKeyPress;
-            m_GlobalHook.MouseClick -= GlobalHookMouseClick;
-            m_GlobalHook.Dispose();
+            _globalHook.KeyPress -= GlobalHookKeyPress;
+            _globalHook.MouseClick -= GlobalHookMouseClick;
+            _globalHook.Dispose();
         }
     }
 }
