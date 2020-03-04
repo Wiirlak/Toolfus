@@ -33,8 +33,6 @@ namespace Toolfus
             {
                 if (process.ProcessName.Equals("Dofus"))
                 {
-                    if (Data.DofusList.Count < 1)
-                        Data.CurrentDofus = process;
                     Data.DofusList.Add(process);
                     
                     // dofus.Add("Process: "+process.ProcessName +" ID: "+process.Id+" Window title: "+process.MainWindowTitle+"");
@@ -130,6 +128,7 @@ namespace Toolfus
                 int droppedIndex = DofusProcessList.Items.IndexOf(dropped);
                 int targetIndex = DofusProcessList.Items.IndexOf(target);
                 Debug.WriteLine(target.Content + " <-> " + dropped.Content);
+                Process pdropped = Data.DofusList[droppedIndex];
 
                 if (dropped.Content == target.Content)
                 {
@@ -140,6 +139,8 @@ namespace Toolfus
                 {
                     DofusProcessList.Items.RemoveAt(droppedIndex);
                     DofusProcessList.Items.Insert(targetIndex, dropped);
+                    Data.DofusList.RemoveAt(droppedIndex);
+                    Data.DofusList.Insert(targetIndex, pdropped);
                 }else
                 {
                     int remIdx = droppedIndex;
@@ -147,8 +148,11 @@ namespace Toolfus
                     {
                         DofusProcessList.Items.RemoveAt(remIdx);
                         DofusProcessList.Items.Insert(targetIndex, dropped);
+                        Data.DofusList.RemoveAt(remIdx);
+                        Data.DofusList.Insert(targetIndex, pdropped);
                     }
                 }
+                Data.CurrentDofus = null;
             }
         }
     }
