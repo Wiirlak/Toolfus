@@ -9,6 +9,9 @@ namespace Toolfus
         [DllImport("user32.dll")]
         public static extern int SendMessage(IntPtr hWnd, uint msg, IntPtr wParam, IntPtr lParam);
         
+        [DllImport("user32.dll")]
+        public static extern int PostMessage(IntPtr hWnd, uint msg, IntPtr wParam, IntPtr lParam);
+        
         public static IntPtr LParams(int wLow, int wHigh)
         {
             return (IntPtr) ( (short) wHigh << 16 | wLow & ushort.MaxValue);
@@ -39,9 +42,9 @@ namespace Toolfus
 
         private static void SendClick(Process p, int x, int y)
         {
-            SendMessage(p.MainWindowHandle, 513U, IntPtr.Zero, 
+            PostMessage(p.MainWindowHandle, 513U, IntPtr.Zero, 
                 LParams(x,y));
-            SendMessage(p.MainWindowHandle, 514U, IntPtr.Zero, 
+            PostMessage(p.MainWindowHandle, 514U, IntPtr.Zero, 
                 LParams(x,y));
         }
         

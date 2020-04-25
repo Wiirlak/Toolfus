@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Configuration;
+using System.Diagnostics;
 
 namespace Toolfus
 {
@@ -21,12 +22,27 @@ namespace Toolfus
 
         public void GetConfig()
         {
-            Up     = ConfigurationManager.AppSettings.GetValues("KeyUp")    [0][0];
-            Down   = ConfigurationManager.AppSettings.GetValues("KeyDown")  [0][0];
-            Left   = ConfigurationManager.AppSettings.GetValues("KeyLeft")  [0][0];
-            Right  = ConfigurationManager.AppSettings.GetValues("KeyRight") [0][0];
-            Follow = ConfigurationManager.AppSettings.GetValues("KeyFollow")[0][0];
-            Switch = ConfigurationManager.AppSettings.GetValues("KeySwitch")[0][0];
+            try
+            {
+                Up = ConfigurationManager.AppSettings.GetValues("KeyUp")[0][0];
+                Down = ConfigurationManager.AppSettings.GetValues("KeyDown")[0][0];
+                Left = ConfigurationManager.AppSettings.GetValues("KeyLeft")[0][0];
+                Right = ConfigurationManager.AppSettings.GetValues("KeyRight")[0][0];
+                Follow = ConfigurationManager.AppSettings.GetValues("KeyFollow")[0][0];
+                Switch = ConfigurationManager.AppSettings.GetValues("KeySwitch")[0][0];
+            }
+            catch (NullReferenceException e)
+            {
+                Debug.WriteLine(e);
+                try
+                {
+                    SetDefault();
+                }
+                catch (Exception fatal)
+                {
+                    Environment.Exit(-1);  
+                }
+            }
         }
 
         public bool InMoveKeyList(char a)
