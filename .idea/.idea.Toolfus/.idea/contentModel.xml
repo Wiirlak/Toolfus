@@ -15,6 +15,10 @@
         <e p="bin" t="ExcludeRecursive" />
         <e p="ChatWindow.xaml" t="Include" />
         <e p="ChatWindow.xaml.cs" t="Include" />
+        <e p="ClickDetector.cs" t="Include" />
+        <e p="ClickSimulator.cs" t="Include" />
+        <e p="Data.cs" t="Include" />
+        <e p="Keybind.cs" t="Include" />
         <e p="MainWindow.xaml" t="Include" />
         <e p="MainWindow.xaml.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive">
@@ -35,6 +39,7 @@
           <e p="Resources.resx" t="Include" />
         </e>
         <e p="Toolfus.csproj" t="IncludeRecursive" />
+        <e p="WindowUtils.cs" t="Include" />
       </e>
       <e p="Toolfus.sln" t="IncludeFlat" />
     </e>

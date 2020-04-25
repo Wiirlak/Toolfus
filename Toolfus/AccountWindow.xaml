@@ -72,7 +72,7 @@
                     </Style>
                 </StackPanel.Resources>
                 <Button>Ajouter</Button>
-                <Button>Tout connecter</Button>
+                <Button Click="ButtonStartDofus_OnClick">Tout connecter</Button>
             </StackPanel>
         </StackPanel>
     </Grid>
