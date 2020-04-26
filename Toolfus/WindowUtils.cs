@@ -9,6 +9,14 @@ namespace Toolfus
 {
     public class WindowUtils
     {
+        private const int ALT = 0xA4;
+        private const int EXTENDEDKEY = 0x1;
+        private const int KEYUP = 0x2;
+        private const int SW_SHOW = 5;
+        
+        [DllImport("user32.dll")]
+        private static extern void keybd_event(byte bVk, byte bScan, uint dwFlags, int dwExtraInfo);
+        
         [DllImport("user32.dll")]
         static extern bool SetForegroundWindow(IntPtr hWnd);
                 
@@ -68,7 +76,6 @@ namespace Toolfus
             {
                 Data.CurrentDofus = Data.DofusList[0];
                 ForceForegroundWindow(Data.CurrentDofus.MainWindowHandle);
-                // SetForegroundWindow(Data.CurrentDofus.MainWindowHandle);
                 return;
             }
             Process cur = Data.CurrentDofus;
@@ -77,8 +84,7 @@ namespace Toolfus
                 curIndex = - 1;
             Process next = Data.DofusList[curIndex + 1];
             
-            SetForegroundWindow(next.MainWindowHandle);
-            Debug.WriteLine(" okkkkk " + cur.MainWindowTitle);
+            ForceForegroundWindow(next.MainWindowHandle);
             Data.CurrentDofus = next;
         }
         
@@ -88,18 +94,17 @@ namespace Toolfus
             GetWindowThreadProcessId(GetForegroundWindow(), out uforeThread);
             int foreThread = checked((int)uforeThread);
             int appThread = Thread.CurrentThread.ManagedThreadId;
-            const int SW_SHOW = 5;
  
             if (foreThread != appThread)
             {
-                AttachThreadInput(foreThread, appThread, true);
-                BringWindowToTop(hWnd);
-                ShowWindow(hWnd, SW_SHOW);
-                AttachThreadInput(foreThread, appThread, false);
+                keybd_event(ALT, 0x45, EXTENDEDKEY | 0, 0);
+                keybd_event(ALT, 0x45, EXTENDEDKEY | KEYUP, 0);
+                SetForegroundWindow(hWnd);
             }
             else
             {
                 BringWindowToTop(hWnd);
+                SetForegroundWindow(hWnd);
                 ShowWindow(hWnd, SW_SHOW);
             }
         }

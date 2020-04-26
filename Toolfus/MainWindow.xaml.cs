@@ -38,12 +38,20 @@ namespace Toolfus
                     // dofus.Add("Process: "+process.ProcessName +" ID: "+process.Id+" Window title: "+process.MainWindowTitle+"");
                     CheckBox checkBox =  new CheckBox();
                     checkBox.Margin = new Thickness { Left = 5, Top = 0, Right = 0, Bottom = 0 };
-                    checkBox.Content = process.MainWindowTitle;
+                    checkBox.Content = parseName(process.MainWindowTitle);
                     DofusProcess.Items.Add(checkBox);
                     checkBox.AddHandler(MouseDownEvent, new MouseButtonEventHandler(DofusProcess_Pop), true);
                     checkBox.AddHandler(DropEvent, new DragEventHandler(DofusProcess_Drop), true);
                 }
             }
+        }
+
+        private string parseName(string i)
+        {
+            Array p = i.Split(' ');
+            return p.Length != 4 ? 
+            "non connecté" : 
+            (String)p.GetValue(0);
         }
         
         private void ButtonAccount_OnClick(object sender, RoutedEventArgs e)
@@ -106,6 +114,13 @@ namespace Toolfus
             }
 
             return null;
+        }
+
+        private void test(object sender, MouseButtonEventArgs e)
+        {
+            // CheckBox a = ((ListViewItem) sender).Content as CheckBox;
+            // Debug.WriteLine("Seen on " + a.IsChecked);
+            Debug.WriteLine("Seen on " + sender.GetType());
         }
 
         private void DofusProcess_Pop(object sender, MouseButtonEventArgs e)
