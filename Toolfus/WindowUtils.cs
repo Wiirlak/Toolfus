@@ -97,8 +97,8 @@ namespace Toolfus
  
             if (foreThread != appThread)
             {
-                keybd_event(ALT, 0x45, EXTENDEDKEY | 0, 0);
-                keybd_event(ALT, 0x45, EXTENDEDKEY | KEYUP, 0);
+                keybd_event((byte)ALT, 0x45, EXTENDEDKEY | 0, 0);
+                keybd_event((byte)ALT, 0x45, EXTENDEDKEY | KEYUP, 0);
                 SetForegroundWindow(hWnd);
             }
             else

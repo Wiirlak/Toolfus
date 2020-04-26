@@ -27,7 +27,7 @@
         <ScrollViewer HorizontalScrollBarVisibility="Auto" Grid.Row="1">
             <ListView 
                 Name="DofusProcess" 
-                AllowDrop="True" >
+                AllowDrop="True">
             </ListView>
         </ScrollViewer>
         <StackPanel Orientation="Horizontal" Grid.Row="2" Margin="10,10,10,20">
