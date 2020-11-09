@@ -17,11 +17,11 @@ jobs:
           .\MSBuild.exe $Env:GITHUB_WORKSPACE\Toolfus.sln /t:Build /p:Configuration=Release
       - name: Moving ressources
         run: |
-          cp sounds Toolfus/bin/Release/
+          cp -r sounds Toolfus/bin/Release/
       - name: Zipping
         uses: papeloto/action-zip@v1
         with:
-          files: Toolfus/bin/Release/ sounds
+          files: Toolfus/bin/Release/
           recursive: false
           dest: result.zip
       - name: Create Release
