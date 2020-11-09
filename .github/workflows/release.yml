@@ -24,7 +24,8 @@ jobs:
       - name: Zipping
         uses: papeloto/action-zip@v1
         with:
-          files: Toolfus/bin/Release
+          files: 'D:\a\Toolfus\Toolfus\Toolfus\bin\Release'
+#          files: Toolfus/bin/Release
           recursive: true
           dest: result.zip
       - name: Create Release
