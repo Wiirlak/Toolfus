@@ -15,20 +15,15 @@ jobs:
         run: |
           cd "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\"
           .\MSBuild.exe $Env:GITHUB_WORKSPACE\Toolfus.sln /t:Build /p:Configuration=Release
-#  release:
-#    needs: build
-#    runs-on: ubuntu-latest
-#    steps:
+      - name: Moving ressources
+        run: |
+          cp sounds Toolfus/bin/Release/
       - name: Zipping
         uses: papeloto/action-zip@v1
         with:
-#          files: 'D:\a\Toolfus\Toolfus\Toolfus\bin\Release'
-          files: Toolfus/bin/Release
+          files: Toolfus/bin/Release/ sounds
           recursive: true
           dest: result.zip
-      - name: test
-        run: |
-          ls Toolfus/
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
