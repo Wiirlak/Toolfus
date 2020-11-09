@@ -22,7 +22,7 @@ jobs:
         uses: papeloto/action-zip@v1
         with:
           files: Toolfus/bin/Release/ sounds
-          recursive: true
+          recursive: false
           dest: result.zip
       - name: Create Release
         id: create_release
