@@ -14,4 +14,4 @@ jobs:
         uses: thedoctor0/zip-release@master
         with:
           filename: 'release.zip'
-          path: 'Toolfus/bin/Release'
+          path: './Toolfus/bin/Release'
