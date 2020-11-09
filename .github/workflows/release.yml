@@ -10,7 +10,7 @@ jobs:
     runs-on: [windows-latest]
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
       - name: Build DotNET
         run: |
           cd "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\"
@@ -19,8 +19,6 @@ jobs:
 #    needs: build
 #    runs-on: ubuntu-latest
 #    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
       - name: Zipping
         uses: papeloto/action-zip@v1
         with:
@@ -28,6 +26,12 @@ jobs:
 #          files: Toolfus/bin/Release
           recursive: true
           dest: result.zip
+      - name: test
+        run: |
+          ls && cd D: && cd a && cd Toolfus && ls
+      - name: test
+        run: |
+          cd Toolfus && ls
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
