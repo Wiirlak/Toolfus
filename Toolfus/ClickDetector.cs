@@ -11,6 +11,7 @@ namespace Toolfus
         private IKeyboardMouseEvents _globalHook;
         private WindowUtils _wUtils;
         private bool _follow;
+        private System.Media.SoundPlayer _player;
         
         public void Subscribe()
         {
@@ -20,6 +21,7 @@ namespace Toolfus
             _globalHook.MouseClick += GlobalHookMouseClick;
             _globalHook.KeyPress += GlobalHookKeyPress;
             _follow = false;
+            _player = new System.Media.SoundPlayer();
         }
 
         private void GlobalHookKeyPress(object sender, KeyPressEventArgs e)
@@ -27,8 +29,12 @@ namespace Toolfus
             if (_wUtils.GetActiveProcessName().Equals("Dofus"))
             {
                 Debug.WriteLine("KeyPress: \t{0}", e.KeyChar);
-                if (e.KeyChar == Data.KeyMap.Follow) 
+                if (e.KeyChar == Data.KeyMap.Follow)
+                {
                     _follow = !_follow;
+                    _player.SoundLocation = AppDomain.CurrentDomain.BaseDirectory + "/sounds/" + (_follow ? "open.wav" : "close.wav");
+                    _player.Play();
+                }
                 else if (_follow && Data.KeyMap.InMoveKeyList(e.KeyChar)) 
                     ClickSimulator.MoveCaracter(e.KeyChar);
             }

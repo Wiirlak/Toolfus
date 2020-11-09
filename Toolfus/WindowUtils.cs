@@ -103,9 +103,11 @@ namespace Toolfus
             }
             else
             {
+                AttachThreadInput(foreThread, appThread, true);
                 BringWindowToTop(hWnd);
                 SetForegroundWindow(hWnd);
                 ShowWindow(hWnd, SW_SHOW);
+                AttachThreadInput(foreThread, appThread, false);
             }
         }
     }
