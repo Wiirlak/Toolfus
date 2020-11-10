@@ -53,8 +53,6 @@ namespace Toolfus
         {
             IntPtr hwnd = GetForegroundWindow();
 
-            // The foreground window can be NULL in certain circumstances, 
-            // such as when a window is losing activation.
             if (hwnd == null)
                 return "Unknown";
 
@@ -103,9 +101,11 @@ namespace Toolfus
             }
             else
             {
+                AttachThreadInput(foreThread, appThread, true);
                 BringWindowToTop(hWnd);
                 SetForegroundWindow(hWnd);
                 ShowWindow(hWnd, SW_SHOW);
+                AttachThreadInput(foreThread, appThread, false);
             }
         }
     }
