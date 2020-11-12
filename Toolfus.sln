@@ -12,5 +12,6 @@ Global
 		{4D7062EF-F325-42A7-9FC7-5514C3588254}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D7062EF-F325-42A7-9FC7-5514C3588254}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4D7062EF-F325-42A7-9FC7-5514C3588254}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D7062EF-F325-42A7-9FC7-5514C3588254}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

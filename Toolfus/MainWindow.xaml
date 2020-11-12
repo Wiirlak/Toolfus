@@ -12,11 +12,11 @@
         FontFamily="{DynamicResource MaterialDesignFont}"
         ResizeMode="CanMinimize"
         mc:Ignorable="d"
-        Title="Toolfus - v0.0.1" Height="350" Width="460">
+        Title="Toolfus - v1.0.4" Height="470" Width="460">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="80"/>
-            <RowDefinition Height="160"/>
+            <RowDefinition Height="280"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0">
