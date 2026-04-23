@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ToolfusDll")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+33212ab8dc49388ed9d1bf6ae87bf0667a21a95f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8b8aec5ac8268abf3ef6a3947eb600f69197c0a7")]
 [assembly: System.Reflection.AssemblyProductAttribute("ToolfusDll")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ToolfusDll")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

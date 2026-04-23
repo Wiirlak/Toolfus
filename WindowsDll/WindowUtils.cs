@@ -6,7 +6,7 @@ namespace ToolfusDll
 {
     public class WindowUtils
     {
-        private const int SW_SHOW = 5;
+        private const int SW_RESTORE = 9;
         
         [DllImport("user32.dll")]
         static extern bool SetForegroundWindow(IntPtr hWnd);
@@ -44,12 +44,12 @@ namespace ToolfusDll
             int appThread = checked((int)GetCurrentThreadId());
 
             if (foreThread != appThread)
-                AttachThreadInput(appThread, foreThread, true);
+                AttachThreadInput(foreThread, appThread, true);
+            ShowWindow(hWnd, SW_RESTORE);
             BringWindowToTop(hWnd);
             SetForegroundWindow(hWnd);
-            ShowWindow(hWnd, SW_SHOW);
             if (foreThread != appThread)
-                AttachThreadInput(appThread, foreThread, false);
+                AttachThreadInput(foreThread, appThread, false);
         }
         
         public string GetWindowName(int pid)
