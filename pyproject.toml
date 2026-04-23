@@ -20,6 +20,7 @@ dependencies = [
 dev = [
     "pre-commit",
     "ruff",
+    # Astral's static type checker: https://docs.astral.sh/ty/
     "ty",
 ]
 
