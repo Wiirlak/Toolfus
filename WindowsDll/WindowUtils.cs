@@ -1,19 +1,12 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
-using System.Threading;
 
 namespace ToolfusDll
 {
     public class WindowUtils
     {
-        private const int ALT = 0xA4;
-        private const int EXTENDEDKEY = 0x1;
-        private const int KEYUP = 0x2;
         private const int SW_SHOW = 5;
-        
-        [DllImport("user32.dll")]
-        private static extern void keybd_event(byte bVk, byte bScan, uint dwFlags, int dwExtraInfo);
         
         [DllImport("user32.dll")]
         static extern bool SetForegroundWindow(IntPtr hWnd);
@@ -32,7 +25,10 @@ namespace ToolfusDll
         
         [DllImport("user32.dll")]
         private static extern Boolean ShowWindow(IntPtr hWnd, Int32 nCmdShow);
-        
+
+        [DllImport("kernel32.dll")]
+        private static extern uint GetCurrentThreadId();
+
         public int testfunc()
         {
             return 1;
@@ -45,22 +41,15 @@ namespace ToolfusDll
             Console.WriteLine("Switching window to " + hWnd + "");
             GetWindowThreadProcessId(GetForegroundWindow(), out uforeThread);
             int foreThread = checked((int)uforeThread);
-            int appThread = Thread.CurrentThread.ManagedThreadId;
- 
+            int appThread = checked((int)GetCurrentThreadId());
+
             if (foreThread != appThread)
-            {
-                keybd_event((byte)ALT, 0x45, EXTENDEDKEY | 0, 0);
-                keybd_event((byte)ALT, 0x45, EXTENDEDKEY | KEYUP, 0);
-                SetForegroundWindow(hWnd);
-            }
-            else
-            {
                 AttachThreadInput(foreThread, appThread, true);
-                BringWindowToTop(hWnd);
-                SetForegroundWindow(hWnd);
-                ShowWindow(hWnd, SW_SHOW);
+            BringWindowToTop(hWnd);
+            SetForegroundWindow(hWnd);
+            ShowWindow(hWnd, SW_SHOW);
+            if (foreThread != appThread)
                 AttachThreadInput(foreThread, appThread, false);
-            }
         }
         
         public string GetWindowName(int pid)

@@ -17,6 +17,7 @@ class Mouse:
 
     def __init__(self):
         self.listener = mouse.Listener()
+        self._pressed_foreground_pid: int = 0
 
     def _transform_click_type(self, button: Button) -> WindowButtonType:
         print(f"button pressed: {button}")
@@ -29,11 +30,13 @@ class Mouse:
         return "l"
 
     def on_click(self, x: int, y: int, button: Button, pressed: bool, window_character: list[WindowCharacter]):
-        if pressed:
-            return
-        foreground = window.GetActiveProcess()
         all_pid = [c.pid for c in window_character]
-        if foreground not in all_pid:
+        if pressed:
+            foreground = window.GetActiveProcess()
+            self._pressed_foreground_pid = foreground if foreground in all_pid else 0
+            return
+        foreground = self._pressed_foreground_pid
+        if foreground == 0:
             return
         for pid in all_pid:
             if pid == foreground:
