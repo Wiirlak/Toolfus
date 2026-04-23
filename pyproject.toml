@@ -21,6 +21,7 @@ dev = [
     "pre-commit",
     "ruff",
     "ty",
+    "uv",
 ]
 
 [tool.setuptools.packages.find]
@@ -35,11 +36,9 @@ target-version = "py312"
 select = [
     "E",
     "F",
-    "I",
-    "UP",
 ]
-
-[tool.ty]
-exclude = [
-    "Toolfus.spec",
+ignore = [
+    "E402",
+    "F401",
+    "F841",
 ]

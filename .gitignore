@@ -6,6 +6,6 @@
 .pytest_cache
 .mypy_cache
 .ty
-uv.lock
+*.egg-info/
 ToolfusDll/bin
 ToolfusDll/obj
