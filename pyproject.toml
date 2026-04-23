@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "toolfus"
+version = "0.1.0"
+description = "Toolfus desktop helper application"
+requires-python = ">=3.12"
+dependencies = [
+    "keyboard",
+    "platformdirs",
+    "psutil",
+    "pynput",
+    "PySide6",
+    "pythonnet",
+]
+
+[dependency-groups]
+dev = [
+    "pre-commit",
+    "ruff",
+    # Astral's static type checker: https://docs.astral.sh/ty/
+    "ty",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py312"
+
+[tool.ruff.lint]
+select = [
+    "E",
+    "F",
+]
+ignore = [
+    "E402",
+]
+
+[tool.ruff.lint.per-file-ignores]
+"src/engine/team.py" = ["F401"]
+"src/gui/components/character.py" = ["F401"]
+"src/gui/layouts/settings.py" = ["F841"]
+"src/gui/layouts/team.py" = ["F401"]
+"src/gui/widgets/shortcut.py" = ["F401"]

@@ -2,5 +2,10 @@
 *.DotSettings*
 /build
 /.venv
+.ruff_cache
+.pytest_cache
+.mypy_cache
+.ty
+*.egg-info/
 ToolfusDll/bin
 ToolfusDll/obj
