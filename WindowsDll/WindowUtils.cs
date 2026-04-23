@@ -37,10 +37,9 @@ namespace ToolfusDll
         public static void ForceForegroundWindow(int pid)
         {
             IntPtr hWnd = Process.GetProcessById(pid).MainWindowHandle;
-            uint uforeThread;
+            uint unusedPid;
             Console.WriteLine("Switching window to " + hWnd + "");
-            GetWindowThreadProcessId(GetForegroundWindow(), out uforeThread);
-            int foreThread = checked((int)uforeThread);
+            int foreThread = GetWindowThreadProcessId(GetForegroundWindow(), out unusedPid);
             int appThread = checked((int)GetCurrentThreadId());
 
             if (foreThread != appThread)
