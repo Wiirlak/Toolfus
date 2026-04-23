@@ -1,0 +1,38 @@
+{
+  "version": 2,
+  "dgSpecHash": "W4qb8/Fwurg=",
+  "success": true,
+  "projectFilePath": "/home/runner/work/Toolfus/Toolfus/WindowsDll/ToolfusDll.csproj",
+  "expectedPackageFiles": [
+    "/home/runner/.nuget/packages/inputsimulatorplus/1.0.7/inputsimulatorplus.1.0.7.nupkg.sha512",
+    "/home/runner/.nuget/packages/mousekeyhook/5.7.1/mousekeyhook.5.7.1.nupkg.sha512",
+    "/home/runner/.nuget/packages/microsoft.netcore.app.ref/5.0.0/microsoft.netcore.app.ref.5.0.0.nupkg.sha512",
+    "/home/runner/.nuget/packages/microsoft.aspnetcore.app.ref/5.0.0/microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "message": "Package 'InputSimulatorPlus 1.0.7' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
+      "projectPath": "/home/runner/work/Toolfus/Toolfus/WindowsDll/ToolfusDll.csproj",
+      "warningLevel": 1,
+      "filePath": "/home/runner/work/Toolfus/Toolfus/WindowsDll/ToolfusDll.csproj",
+      "libraryId": "InputSimulatorPlus",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "message": "Package 'MouseKeyHook 5.7.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
+      "projectPath": "/home/runner/work/Toolfus/Toolfus/WindowsDll/ToolfusDll.csproj",
+      "warningLevel": 1,
+      "filePath": "/home/runner/work/Toolfus/Toolfus/WindowsDll/ToolfusDll.csproj",
+      "libraryId": "MouseKeyHook",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    }
+  ]
+}

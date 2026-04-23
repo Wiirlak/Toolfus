@@ -44,12 +44,12 @@ namespace ToolfusDll
             int appThread = checked((int)GetCurrentThreadId());
 
             if (foreThread != appThread)
-                AttachThreadInput(foreThread, appThread, true);
+                AttachThreadInput(appThread, foreThread, true);
             BringWindowToTop(hWnd);
             SetForegroundWindow(hWnd);
             ShowWindow(hWnd, SW_SHOW);
             if (foreThread != appThread)
-                AttachThreadInput(foreThread, appThread, false);
+                AttachThreadInput(appThread, foreThread, false);
         }
         
         public string GetWindowName(int pid)

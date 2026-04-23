@@ -1,0 +1,13 @@
+/home/runner/work/Toolfus/Toolfus/WindowsDll/bin/Release/net5.0/ToolfusDll.deps.json
+/home/runner/work/Toolfus/Toolfus/WindowsDll/bin/Release/net5.0/ToolfusDll.dll
+/home/runner/work/Toolfus/Toolfus/WindowsDll/bin/Release/net5.0/ToolfusDll.pdb
+/home/runner/work/Toolfus/Toolfus/WindowsDll/obj/Release/net5.0/ToolfusDll.csproj.AssemblyReference.cache
+/home/runner/work/Toolfus/Toolfus/WindowsDll/obj/Release/net5.0/ToolfusDll.GeneratedMSBuildEditorConfig.editorconfig
+/home/runner/work/Toolfus/Toolfus/WindowsDll/obj/Release/net5.0/ToolfusDll.AssemblyInfoInputs.cache
+/home/runner/work/Toolfus/Toolfus/WindowsDll/obj/Release/net5.0/ToolfusDll.AssemblyInfo.cs
+/home/runner/work/Toolfus/Toolfus/WindowsDll/obj/Release/net5.0/ToolfusDll.csproj.CoreCompileInputs.cache
+/home/runner/work/Toolfus/Toolfus/WindowsDll/obj/Release/net5.0/ToolfusDll.sourcelink.json
+/home/runner/work/Toolfus/Toolfus/WindowsDll/obj/Release/net5.0/ToolfusDll.dll
+/home/runner/work/Toolfus/Toolfus/WindowsDll/obj/Release/net5.0/refint/ToolfusDll.dll
+/home/runner/work/Toolfus/Toolfus/WindowsDll/obj/Release/net5.0/ToolfusDll.pdb
+/home/runner/work/Toolfus/Toolfus/WindowsDll/obj/Release/net5.0/ref/ToolfusDll.dll
