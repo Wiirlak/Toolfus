@@ -6,6 +6,8 @@
 .pytest_cache
 .mypy_cache
 .ty
+__pycache__/
+*.py[cod]
 *.egg-info/
-ToolfusDll/bin
-ToolfusDll/obj
+WindowsDll/bin
+WindowsDll/obj
