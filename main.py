@@ -1,3 +1,4 @@
+import logging
 import sys
 import time
 
@@ -9,6 +10,14 @@ from src.engine.listener import enable_keyboard_listener, disable_keyboard_liste
 from src.engine.utils import resource_path
 from src.gui.main_window import MainWidget
 from src.gui.widgets.tray_icon import TrayIcon
+
+logging.basicConfig(
+    level=logging.DEBUG,
+    format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
+    handlers=[
+        logging.StreamHandler(sys.stdout),
+    ],
+)
 
 
 def run() -> int:
