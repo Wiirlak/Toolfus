@@ -1,7 +1,8 @@
 # Toolfus
 
 Toolfus is a desktop companion for managing multiple Dofus game windows on Windows.  
-It provides a lightweight interface to detect characters, switch quickly between windows with configurable shortcuts, and replicate mouse clicks to background game windows when needed.
+It provides a lightweight interface to detect characters and switch quickly between windows with configurable shortcuts.  
+It can also replicate mouse clicks to background game windows when needed.
 
 ## Main capabilities
 
