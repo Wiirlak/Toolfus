@@ -1,4 +1,5 @@
 import json
+import logging
 import os
 
 import platformdirs
@@ -17,16 +18,18 @@ class UiPreferences:
         if not os.path.exists(CONF_PATH):
             return
         try:
-            config = json.load(open(os.path.join(CONF_PATH, self.__filename), "r"))
+            with open(os.path.join(CONF_PATH, self.__filename), "r") as file:
+                config = json.load(file)
             self.always_on_top = bool(config.get("always_on_top", self.always_on_top))
-        except Exception as e:
-            print(e)
+        except Exception:
+            logging.exception("Failed to read UI configuration")
             self.write_configuration()
 
     def write_configuration(self):
         if not os.path.exists(CONF_PATH):
             os.makedirs(CONF_PATH)
-        json.dump(self.get_configuration(), open(os.path.join(CONF_PATH, self.__filename), "w"))
+        with open(os.path.join(CONF_PATH, self.__filename), "w") as file:
+            json.dump(self.get_configuration(), file)
 
     def set_always_on_top(self, value: bool):
         self.always_on_top = bool(value)
