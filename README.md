@@ -22,10 +22,9 @@ It provides a lightweight interface to detect characters, switch quickly between
 
 ### Build steps
 
-1. Open a terminal in `/home/runner/work/Toolfus/Toolfus`.
+1. Open a terminal in the project root directory (the folder containing `main.py`).
 2. Install dependencies.
 3. Build with the spec file:
    - `pyinstaller Toolfus.spec`
 4. If the spec file paths are not valid on your machine, build from `main.py` with equivalent data files and icon settings.
 5. Retrieve the generated executable from the `dist/Toolfus/` output directory.
-
