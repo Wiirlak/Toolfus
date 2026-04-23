@@ -21,7 +21,7 @@ class UiPreferences:
             with open(os.path.join(CONF_PATH, self.__filename), "r") as file:
                 config = json.load(file)
             self.always_on_top = bool(config.get("always_on_top", self.always_on_top))
-        except Exception:
+        except (FileNotFoundError, json.JSONDecodeError, OSError):
             logging.exception("Failed to read UI configuration")
             self.write_configuration()
 
