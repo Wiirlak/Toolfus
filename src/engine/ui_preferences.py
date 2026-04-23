@@ -27,7 +27,7 @@ class UiPreferences:
 
     def write_configuration(self):
         if not os.path.exists(CONF_PATH):
-            os.makedirs(CONF_PATH)
+            os.makedirs(CONF_PATH, exist_ok=True)
         with open(os.path.join(CONF_PATH, self.__filename), "w") as file:
             json.dump(self.get_configuration(), file)
 
