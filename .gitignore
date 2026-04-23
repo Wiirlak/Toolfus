@@ -1,0 +1,6 @@
+/dist
+*.DotSettings*
+/build
+/.venv
+ToolfusDll/bin
+ToolfusDll/obj
