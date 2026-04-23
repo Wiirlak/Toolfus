@@ -7,6 +7,6 @@ repos:
     hooks:
       - id: ty-check
         name: ty check
-        entry: .venv/bin/uv run ty check --exit-zero
+        entry: uv run ty check --exit-zero
         language: system
         pass_filenames: false

@@ -21,7 +21,6 @@ dev = [
     "pre-commit",
     "ruff",
     "ty",
-    "uv",
 ]
 
 [tool.setuptools.packages.find]
@@ -39,6 +38,11 @@ select = [
 ]
 ignore = [
     "E402",
-    "F401",
-    "F841",
 ]
+
+[tool.ruff.lint.per-file-ignores]
+"src/engine/team.py" = ["F401"]
+"src/gui/components/character.py" = ["F401"]
+"src/gui/layouts/settings.py" = ["F841"]
+"src/gui/layouts/team.py" = ["F401"]
+"src/gui/widgets/shortcut.py" = ["F401"]
