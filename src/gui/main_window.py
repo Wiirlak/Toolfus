@@ -41,6 +41,9 @@ class MainWidget(QWidget):
         self.setStyleSheet(f"background-color: {color}")
 
     def set_always_on_top(self, enabled: bool):
+        is_top_most = bool(self.windowFlags() & Qt.WindowType.WindowStaysOnTopHint)
+        if is_top_most == enabled:
+            return
         self.setWindowFlag(Qt.WindowType.WindowStaysOnTopHint, enabled)
         if self.isVisible():
             self.show()

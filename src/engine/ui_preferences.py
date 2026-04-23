@@ -8,10 +8,10 @@ CONF_PATH = platformdirs.user_data_dir("Toolfus")
 
 
 class UiPreferences:
-    always_on_top = False
     __filename = "ui_settings.json"
 
     def __init__(self):
+        self.always_on_top = False
         self.read_configuration()
 
     def read_configuration(self):
@@ -22,7 +22,7 @@ class UiPreferences:
                 config = json.load(file)
             self.always_on_top = bool(config.get("always_on_top", self.always_on_top))
         except (FileNotFoundError, json.JSONDecodeError, OSError):
-            logging.exception("Failed to read UI configuration")
+            logging.exception("Failed to read UI configuration, creating default settings")
             self.write_configuration()
 
     def write_configuration(self):
