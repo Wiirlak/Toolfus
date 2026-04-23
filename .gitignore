@@ -2,5 +2,10 @@
 *.DotSettings*
 /build
 /.venv
+.ruff_cache
+.pytest_cache
+.mypy_cache
+.ty
+uv.lock
 ToolfusDll/bin
 ToolfusDll/obj

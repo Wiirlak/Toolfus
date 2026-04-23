@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "toolfus"
+version = "0.1.0"
+description = "Toolfus desktop helper application"
+requires-python = ">=3.12"
+dependencies = [
+    "keyboard",
+    "platformdirs",
+    "psutil",
+    "pynput",
+    "PySide6",
+    "pythonnet",
+]
+
+[dependency-groups]
+dev = [
+    "pre-commit",
+    "ruff",
+    "ty",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py312"
+
+[tool.ruff.lint]
+select = [
+    "E",
+    "F",
+    "I",
+    "UP",
+]
+
+[tool.ty]
+exclude = [
+    "Toolfus.spec",
+]
