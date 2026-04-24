@@ -11,11 +11,9 @@ class SettingsLayout(QWidget):
         self.setAutoFillBackground(True)
 
         layout = QHBoxLayout(self)
-        btn_ok = QPushButton("Activer Multi clic")
         btn_shortcuts = QPushButton("Raccourcis")
         btn_shortcuts.clicked.connect(self.open_shortcut_window)
 
-        # layout.addWidget(btn_ok)
         layout.addWidget(btn_shortcuts)
         self.setLayout(layout)
 
