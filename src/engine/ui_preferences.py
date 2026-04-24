@@ -16,12 +16,16 @@ class UiPreferences:
 
     def read_configuration(self):
         if not os.path.exists(CONF_PATH):
-            return
+            os.makedirs(CONF_PATH, exist_ok=True)
+        config_path = os.path.join(CONF_PATH, self.__filename)
         try:
-            with open(os.path.join(CONF_PATH, self.__filename), "r") as file:
+            with open(config_path, "r") as file:
                 config = json.load(file)
             self.always_on_top = bool(config.get("always_on_top", self.always_on_top))
-        except (FileNotFoundError, json.JSONDecodeError, OSError):
+        except FileNotFoundError:
+            logging.info("UI configuration file missing, creating default settings")
+            self.write_configuration()
+        except (json.JSONDecodeError, OSError):
             logging.exception("Failed to read UI configuration, creating default settings")
             self.write_configuration()
 

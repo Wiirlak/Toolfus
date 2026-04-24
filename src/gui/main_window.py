@@ -51,37 +51,53 @@ class MainWidget(QWidget):
     def apply_theme(self):
         self.setStyleSheet("""
             QWidget#MainWidget {
-                background-color: #16181f;
+                background-color: qlineargradient(
+                    x1: 0, y1: 0, x2: 1, y2: 1,
+                    stop: 0 #12141b,
+                    stop: 1 #1f2740
+                );
                 color: #e8ebf2;
             }
             QWidget#TeamLayout, QWidget#SettingsLayout {
-                background-color: #1e2230;
-                border: 1px solid #2a3144;
-                border-radius: 10px;
+                background-color: rgba(26, 31, 46, 0.94);
+                border: 1px solid #334063;
+                border-radius: 12px;
             }
             QWidget#CharacterCard {
-                background-color: #262d40;
-                border: 1px solid #343f59;
-                border-radius: 8px;
+                background-color: #273149;
+                border: 1px solid #3c4a6e;
+                border-radius: 10px;
+                padding: 6px 8px;
+            }
+            QWidget#CharacterCard:hover {
+                background-color: #304062;
+                border: 1px solid #5a76c0;
             }
             QPushButton {
-                background-color: #4d79ff;
+                background-color: qlineargradient(
+                    x1: 0, y1: 0, x2: 0, y2: 1,
+                    stop: 0 #72a3ff,
+                    stop: 1 #4d79ff
+                );
                 color: #ffffff;
-                border: none;
-                border-radius: 7px;
-                padding: 6px 10px;
+                border: 1px solid #7ea8ff;
+                border-radius: 8px;
+                padding: 7px 11px;
                 font-weight: 600;
             }
             QPushButton:hover {
                 background-color: #5f88ff;
+                border: 1px solid #9fc2ff;
             }
             QPushButton:pressed {
                 background-color: #3f66d8;
+                border: 1px solid #6b8fe0;
             }
             QLabel#SectionTitle {
                 font-size: 12px;
                 font-weight: 700;
-                color: #b9c4de;
+                letter-spacing: 0.04em;
+                color: #d4e0ff;
             }
             QLabel#CharacterName {
                 font-size: 13px;
