@@ -46,9 +46,11 @@ class Mouse:
         if foreground == 0:
             return
         click_type = self._transform_click_type(button)
-        logger.info(f"Dispatching click ({x},{y}) button={click_type} from pid={foreground} to {[p for p in all_pid if p != foreground]}")
-        for pid in all_pid:
-            if pid == foreground:
-                continue
-            logger.debug(f"  -> sending click to pid={pid}")
-            click.ClickBackgroundWindowPosition(pid, x, y, click_type)
+        background_pids = [p for p in all_pid if p != foreground]
+        logger.info(f"Dispatching click ({x},{y}) button={click_type} from pid={foreground} to {background_pids}")
+        for pid in background_pids:
+            logger.debug(f"  -> sending click (focus-switch) to pid={pid}")
+            click.ClickWindowPositionFocusSwitch(pid, x, y, click_type)
+        # Restore focus to the window the user originally clicked in.
+        logger.debug(f"  -> restoring focus to pid={foreground}")
+        window.ForceForegroundWindow(foreground)
