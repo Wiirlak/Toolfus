@@ -2,7 +2,6 @@ from PySide6.QtGui import QMouseEvent
 from PySide6.QtWidgets import QVBoxLayout
 from PySide6.QtWidgets import QWidget
 
-from src.engine.listener import stop_mouse_listener
 from src.gui.components.character import CharacterLayout
 from src.engine import Engine
 from src.models.window_character import WindowCharacter
@@ -30,7 +29,6 @@ class TeamLayout(QWidget):
         self.update_team()
         print(self.mapped_team)
         self.team = new_team
-        stop_mouse_listener()
 
     def update_team(self):
         self.team = Engine.team.scan_team()

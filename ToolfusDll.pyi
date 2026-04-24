@@ -6,8 +6,12 @@ class WindowUtils:
     def GetActiveProcess(self) -> int:...
 
 
+# NOTE: ClickUtils relies on SendInput + focus-switch to dispatch clicks to background windows.
+# This does NOT work with Unity-based games (e.g. Dofus) because Unity uses its own Raw Input
+# pipeline and only processes input events when its window is in the foreground.
+# Every call to ClickWindowPositionFocusSwitch will cause a visible window flicker, which makes
+# it unusable when targeting more than one or two windows at a time.
 class ClickUtils:
-
     def ClickBackgroundWindow(self, pid: int, click_type: str) -> None:...
-
     def ClickBackgroundWindowPosition(self, pid: int, x: int, y: int, click_type: str) -> None:...
+    def ClickWindowPositionFocusSwitch(self, pid: int, x: int, y: int, click_type: str) -> None:...

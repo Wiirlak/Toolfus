@@ -1,6 +1,5 @@
 import psutil
 from PySide6.QtGui import QKeyEvent, Qt
-from keyboard import release
 
 from ToolfusDll import WindowUtils
 from src.models.window_character import WindowCharacter
@@ -46,7 +45,6 @@ class Team:
             else:
                 self._current_character += 1
             window.ForceForegroundWindow(self.selected_character[self._current_character].pid)
-            release('alt')
         except Exception as e:
             print(e)
 
