@@ -22,7 +22,7 @@ class SettingsLayout(QWidget):
         row = QHBoxLayout()
         row.setContentsMargins(0, 0, 0, 0)
         row.setSpacing(6)
-        btn_shortcuts = QPushButton("Raccourcis clavier")
+        btn_shortcuts = QPushButton("Settings")
         btn_shortcuts.clicked.connect(self.open_shortcut_window)
 
         row.addWidget(btn_shortcuts)
@@ -32,6 +32,6 @@ class SettingsLayout(QWidget):
     def open_shortcut_window(self):
         disable_keyboard_listener()
         dialog = ShortcutWidget()
-        if dialog.exec():  # Si l'utilisateur clique sur "Enregistrer"
-            print("Raccourcis mis à jour !")
+        if dialog.exec():
+            pass
         enable_keyboard_listener()

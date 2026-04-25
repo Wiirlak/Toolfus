@@ -1,36 +1,48 @@
-import os
 import json
+import logging
+import os
 
 import platformdirs
 
 CONF_PATH = platformdirs.user_data_dir("Toolfus")
-print(CONF_PATH)
+SETTINGS_FILE = "settings.json"
 
 
 class Shortcut:
     next_window = "²"
-    __filename = "settings.json"
 
     def __init__(self):
         self.read_configuration()
 
     def read_configuration(self):
-        if not os.path.exists(CONF_PATH):
-            return
+        os.makedirs(CONF_PATH, exist_ok=True)
+        config_path = os.path.join(CONF_PATH, SETTINGS_FILE)
         try:
-            config = json.load(open(os.path.join(CONF_PATH, self.__filename), "r"))
-            self.next_window = config["next_window"]
-        except Exception as e:
-            print(e)
+            with open(config_path, "r") as file:
+                config = json.load(file)
+            self.next_window = config.get("next_window", self.next_window)
+        except FileNotFoundError:
+            logging.info("Settings file missing, creating defaults")
+            self.write_configuration()
+        except (json.JSONDecodeError, OSError):
+            logging.exception("Failed to read shortcut settings, restoring defaults")
             self.write_configuration()
 
     def write_configuration(self):
-        if not os.path.exists(CONF_PATH):
-            os.makedirs(CONF_PATH)
-        json.dump(self.get_configuration(), open(os.path.join(CONF_PATH, self.__filename), "w"))
+        os.makedirs(CONF_PATH, exist_ok=True)
+        config_path = os.path.join(CONF_PATH, SETTINGS_FILE)
+        existing: dict = {}
+        try:
+            with open(config_path, "r") as file:
+                existing = json.load(file)
+        except (FileNotFoundError, json.JSONDecodeError):
+            pass
+        existing.update(self.get_configuration())
+        with open(config_path, "w") as file:
+            json.dump(existing, file, indent=2)
 
     def set_configuration(self, shortcut: dict) -> None:
-        self.next_window = shortcut["next_window"]
+        self.next_window = shortcut.get("next_window", self.next_window)
         self.write_configuration()
 
     def get_configuration(self) -> dict:
