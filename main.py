@@ -2,10 +2,10 @@ import logging
 import sys
 import time
 
-from PySide6.QtCore import Qt
 from PySide6.QtGui import QIcon
 from PySide6.QtWidgets import QApplication
 
+from src.engine import Engine
 from src.engine.listener import enable_keyboard_listener, disable_keyboard_listener, set_mainframe
 from src.engine.utils import resource_path
 from src.gui.main_window import MainWidget
@@ -33,7 +33,7 @@ def run() -> int:
     # widget.setStyleSheet("background-color: #171717")
 
     tray_icon = TrayIcon(QIcon(resource_path("res/images/TFoff.ico")), widget)
-    widget.setWindowFlag(Qt.WindowType.WindowStaysOnTopHint)
+    widget.set_always_on_top(Engine.preferences.always_on_top)
     set_mainframe(widget, tray_icon)
 
     widget.show()

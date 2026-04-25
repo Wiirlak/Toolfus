@@ -7,11 +7,15 @@ from src.models.job_icon import JobIcon
 class CharacterLayout(QWidget):
     def __init__(self, color: str, name: str, icon: str):
         QWidget.__init__(self)
+        self.setObjectName("CharacterCard")
         self.setAutoFillBackground(True)
 
         layout = QHBoxLayout(self)
+        layout.setContentsMargins(8, 6, 8, 6)
+        layout.setSpacing(8)
 
         self.character_name = QLabel(name)
+        self.character_name.setObjectName("CharacterName")
         # self.checkbox = QCheckBox()
         self.character_icon = JobIcon.from_str(icon).icon
         self.is_checked = False

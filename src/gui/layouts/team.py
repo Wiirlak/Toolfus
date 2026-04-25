@@ -1,5 +1,5 @@
 from PySide6.QtGui import QMouseEvent
-from PySide6.QtWidgets import QVBoxLayout
+from PySide6.QtWidgets import QVBoxLayout, QLabel
 from PySide6.QtWidgets import QWidget
 
 from src.gui.components.character import CharacterLayout
@@ -13,8 +13,14 @@ class TeamLayout(QWidget):
 
     def __init__(self):
         QWidget.__init__(self)
+        self.setObjectName("TeamLayout")
         self.setAutoFillBackground(True)
         self.layout = QVBoxLayout(self)
+        self.layout.setContentsMargins(10, 10, 10, 10)
+        self.layout.setSpacing(6)
+        title = QLabel("Équipe détectée")
+        title.setObjectName("SectionTitle")
+        self.layout.addWidget(title)
         self.update_team()
         self.setLayout(self.layout)
 
@@ -43,7 +49,7 @@ class TeamLayout(QWidget):
     def clear_layout(self):
         for i in reversed(range(self.layout.count())):
             widget = self.layout.itemAt(i).widget()
-            if widget is not None:
+            if widget is not None and widget.objectName() != "SectionTitle":
                 widget.setParent(None)
                 widget.deleteLater()
         self.layout.update()
