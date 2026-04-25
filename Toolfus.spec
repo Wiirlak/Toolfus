@@ -60,7 +60,6 @@ a = Analysis(
         "xmlrpc",
         "http",
         "urllib",
-        "distutils",
         "setuptools",
         "pip",
         "pydoc",
